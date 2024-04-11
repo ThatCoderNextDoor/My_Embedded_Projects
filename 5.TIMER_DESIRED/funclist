@@ -1,0 +1,11 @@
+___ftneg: CODE, 1018 0 10
+___awdiv: CODE, 1167 0 114
+_delay: CODE, 1028 0 21
+___ftpack: CODE, 1281 0 117
+_main: CODE, 1049 0 31
+_loadvalue: CODE, 1552 0 185
+___ftadd: CODE, 1737 0 311
+___awtoft: CODE, 1121 0 46
+___wmul: CODE, 1080 0 41
+___fttol: CODE, 1398 0 154
+Total: 1030
