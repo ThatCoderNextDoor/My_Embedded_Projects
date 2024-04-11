@@ -1,0 +1,1112 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.71a build 6446 
+                                                                                               Wed Nov 01 18:04:06 2023
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6446
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6446"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 2 "C:\Users\Lenovo\Desktop\PIC\TASK\27. MATRIX_LED\MATRIX_LED.C"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 2 "C:\Users\Lenovo\Desktop\PIC\TASK\27. MATRIX_LED\MATRIX_LED.C"
+    45  2007  3F72               	dw 0x3F72 ;#
+    46                           	FNROOT	_main
+    47                           	global	_PORTB
+    48                           psect	maintext,global,class=CODE,delta=2
+    49                           global __pmaintext
+    50  06A3                     __pmaintext:
+    51  0006                     _PORTB	set	6
+    52                           	global	_PORTC
+    53  0007                     _PORTC	set	7
+    54                           	global	_PORTD
+    55  0008                     _PORTD	set	8
+    56                           	global	_RB0
+    57  0030                     _RB0	set	48
+    58                           	global	_RB1
+    59  0031                     _RB1	set	49
+    60                           	global	_RB2
+    61  0032                     _RB2	set	50
+    62                           	global	_RB3
+    63  0033                     _RB3	set	51
+    64                           	global	_RB4
+    65  0034                     _RB4	set	52
+    66                           	global	_RB5
+    67  0035                     _RB5	set	53
+    68                           	global	_RB6
+    69  0036                     _RB6	set	54
+    70                           	global	_TRISB
+    71  0086                     _TRISB	set	134
+    72                           	global	_TRISC
+    73  0087                     _TRISC	set	135
+    74                           	global	_TRISD
+    75  0088                     _TRISD	set	136
+    76                           	file	"MATRIX_LED.as"
+    77                           	line	#
+    78                           psect cinit,class=CODE,delta=2
+    79                           global start_initialization
+    80  069F                     start_initialization:
+    81                           
+    82                           psect cinit,class=CODE,delta=2
+    83                           global end_of_initialization
+    84                           
+    85                           ;End of C runtime variable initialization code
+    86                           
+    87  069F                     end_of_initialization:
+    88  069F  0183               clrf status
+    89  06A0  120A  118A  2EA3   ljmp _main	;jump to C main() function
+    90                           psect	cstackCOMMON,class=COMMON,space=1
+    91                           global __pcstackCOMMON
+    92  0070                     __pcstackCOMMON:
+    93                           	global	?_main
+    94  0070                     ?_main:	; 0 bytes @ 0x0
+    95                           	global	??_main
+    96  0070                     ??_main:	; 0 bytes @ 0x0
+    97  0070                     	ds	3
+    98 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+    99 ;;Auto spaces:   Size  Autos    Used
+   100 ;; COMMON          14      3       3
+   101 ;; BANK0           80      0       0
+   102 ;; BANK1           80      0       0
+   103 ;; BANK3           96      0       0
+   104 ;; BANK2           96      0       0
+   105                           
+   106 ;;
+   107 ;; Pointer list with targets:
+   108                           
+   109                           
+   110                           
+   111 ;;
+   112 ;; Critical Paths under _main in COMMON
+   113 ;;
+   114 ;;   None.
+   115 ;;
+   116 ;; Critical Paths under _main in BANK0
+   117 ;;
+   118 ;;   None.
+   119 ;;
+   120 ;; Critical Paths under _main in BANK1
+   121 ;;
+   122 ;;   None.
+   123 ;;
+   124 ;; Critical Paths under _main in BANK3
+   125 ;;
+   126 ;;   None.
+   127 ;;
+   128 ;; Critical Paths under _main in BANK2
+   129 ;;
+   130 ;;   None.
+   131                           
+   132 ;;
+   133 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   134 ;;
+   135                           
+   136 ;;
+   137 ;;Call Graph Tables:
+   138 ;;
+   139 ;; ---------------------------------------------------------------------------------
+   140 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   141 ;; ---------------------------------------------------------------------------------
+   142 ;; (0) _main                                                 3     3      0       0
+   143 ;;                                              0 COMMON     3     3      0
+   144 ;; ---------------------------------------------------------------------------------
+   145 ;; Estimated maximum stack depth 0
+   146 ;; ---------------------------------------------------------------------------------
+   147                           
+   148 ;; Call Graph Graphs:
+   149                           
+   150 ;; _main (ROOT)
+   151 ;;
+   152                           
+   153 ;; Address spaces:
+   154                           
+   155 ;;Name               Size   Autos  Total    Cost      Usage
+   156 ;;BITCOMMON            E      0       0       0        0.0%
+   157 ;;EEDATA             100      0       0       0        0.0%
+   158 ;;NULL                 0      0       0       0        0.0%
+   159 ;;CODE                 0      0       0       0        0.0%
+   160 ;;COMMON               E      3       3       1       21.4%
+   161 ;;BITSFR0              0      0       0       1        0.0%
+   162 ;;SFR0                 0      0       0       1        0.0%
+   163 ;;BITSFR1              0      0       0       2        0.0%
+   164 ;;SFR1                 0      0       0       2        0.0%
+   165 ;;STACK                0      0       0       2        0.0%
+   166 ;;ABS                  0      0       0       3        0.0%
+   167 ;;BITBANK0            50      0       0       4        0.0%
+   168 ;;BITSFR3              0      0       0       4        0.0%
+   169 ;;SFR3                 0      0       0       4        0.0%
+   170 ;;BANK0               50      0       0       5        0.0%
+   171 ;;BITSFR2              0      0       0       5        0.0%
+   172 ;;SFR2                 0      0       0       5        0.0%
+   173 ;;BITBANK1            50      0       0       6        0.0%
+   174 ;;BANK1               50      0       0       7        0.0%
+   175 ;;BITBANK3            60      0       0       8        0.0%
+   176 ;;BANK3               60      0       0       9        0.0%
+   177 ;;BITBANK2            60      0       0      10        0.0%
+   178 ;;BANK2               60      0       0      11        0.0%
+   179 ;;DATA                 0      0       0      12        0.0%
+   180                           
+   181                           	global	_main
+   182                           psect	maintext
+   183                           
+   184 ;; *************** function _main *****************
+   185 ;; Defined at:
+   186 ;;		line 13 in file "C:\Users\Lenovo\Desktop\PIC\TASK\27. MATRIX_LED\MATRIX_LED.C"
+   187 ;; Parameters:    Size  Location     Type
+   188 ;;		None
+   189 ;; Auto vars:     Size  Location     Type
+   190 ;;		None
+   191 ;; Return value:  Size  Location     Type
+   192 ;;		None               void
+   193 ;; Registers used:
+   194 ;;		wreg, status,2
+   195 ;; Tracked objects:
+   196 ;;		On entry : 17F/0
+   197 ;;		On exit  : 0/0
+   198 ;;		Unchanged: 0/0
+   199 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   200 ;;      Params:         0       0       0       0       0
+   201 ;;      Locals:         0       0       0       0       0
+   202 ;;      Temps:          3       0       0       0       0
+   203 ;;      Totals:         3       0       0       0       0
+   204 ;;Total ram usage:        3 bytes
+   205 ;; This function calls:
+   206 ;;		Nothing
+   207 ;; This function is called by:
+   208 ;;		Startup code after reset
+   209 ;; This function uses a non-reentrant model
+   210 ;;
+   211                           psect	maintext
+   212                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\27. MATRIX_LED\MATRIX_LED.C"
+   213                           	line	13
+   214                           	global	__size_of_main
+   215  015D                     	__size_of_main	equ	__end_of_main-_main
+   216                           	
+   217  06A3                     _main:	
+   218                           	opt	stack 8
+   219                           ; Regs used in _main: [wreg+status,2]
+   220                           	line	14
+   221                           	
+   222  06A3                     l1776:	
+   223                           ;MATRIX_LED.C: 14: TRISB=0X78;
+   224  06A3  3078               	movlw	(078h)
+   225  06A4  1683               	bsf	status, 5	;RP0=1, select bank1
+   226  06A5  1303               	bcf	status, 6	;RP1=0, select bank1
+   227  06A6  0086               	movwf	(134)^080h	;volatile
+   228                           	line	15
+   229                           	
+   230  06A7                     l1778:	
+   231                           ;MATRIX_LED.C: 15: TRISD=0X00;
+   232  06A7  0188               	clrf	(136)^080h	;volatile
+   233                           	line	16
+   234                           	
+   235  06A8                     l1780:	
+   236                           ;MATRIX_LED.C: 16: TRISC=0X00;
+   237  06A8  0187               	clrf	(135)^080h	;volatile
+   238                           	line	17
+   239                           	
+   240  06A9                     l1782:	
+   241                           ;MATRIX_LED.C: 17: PORTD=0X00;
+   242  06A9  1283               	bcf	status, 5	;RP0=0, select bank0
+   243  06AA  1303               	bcf	status, 6	;RP1=0, select bank0
+   244  06AB  0188               	clrf	(8)	;volatile
+   245                           	line	18
+   246                           	
+   247  06AC                     l1784:	
+   248                           ;MATRIX_LED.C: 18: PORTB=0X00;
+   249  06AC  0186               	clrf	(6)	;volatile
+   250                           	line	19
+   251                           	
+   252  06AD                     l1786:	
+   253                           ;MATRIX_LED.C: 19: PORTC=0X00;
+   254  06AD  0187               	clrf	(7)	;volatile
+   255                           	line	20
+   256                           ;MATRIX_LED.C: 20: while(1)
+   257                           	
+   258  06AE                     l561:	
+   259                           	line	22
+   260                           	
+   261  06AE                     l1788:	
+   262                           ;MATRIX_LED.C: 21: {
+   263                           ;MATRIX_LED.C: 22: RB0=1,RB1=0,RB2=0;
+   264  06AE  1406               	bsf	(48/8),(48)&7
+   265                           	
+   266  06AF                     l1790:	
+   267  06AF  1086               	bcf	(49/8),(49)&7
+   268                           	
+   269  06B0                     l1792:	
+   270  06B0  1106               	bcf	(50/8),(50)&7
+   271                           	line	23
+   272                           	
+   273  06B1                     l1794:	
+   274                           ;MATRIX_LED.C: 23: if(RB3==1)
+   275  06B1  1D86               	btfss	(51/8),(51)&7
+   276  06B2  2EB4               	goto	u2141
+   277  06B3  2EB5               	goto	u2140
+   278  06B4                     u2141:
+   279  06B4  2EC9               	goto	l562
+   280  06B5                     u2140:
+   281                           	line	24
+   282                           	
+   283  06B5                     l1796:	
+   284                           ;MATRIX_LED.C: 24: {while(RB3==1);
+   285  06B5  2EB6               	goto	l563
+   286                           	
+   287  06B6                     l564:	
+   288                           	
+   289  06B6                     l563:	
+   290  06B6  1986               	btfsc	(51/8),(51)&7
+   291  06B7  2EB9               	goto	u2151
+   292  06B8  2EBA               	goto	u2150
+   293  06B9                     u2151:
+   294  06B9  2EB6               	goto	l564
+   295  06BA                     u2150:
+   296                           	
+   297  06BA                     l565:	
+   298                           	line	25
+   299                           	
+   300  06BA                     l1798:	
+   301                           ;MATRIX_LED.C: 25: PORTC=0X80;
+   302  06BA  3080               	movlw	(080h)
+   303  06BB  0087               	movwf	(7)	;volatile
+   304                           	line	26
+   305                           ;MATRIX_LED.C: 26: _delay((unsigned long)((500)*(4000000/4000.0)));
+   306                           	opt asmopt_off
+   307  06BC  3003               movlw  3
+   308  06BD  00F2               movwf	((??_main+0)+0+2),f
+   309  06BE  3088               movlw	136
+   310  06BF  00F1               movwf	((??_main+0)+0+1),f
+   311  06C0  3056               	movlw	86
+   312  06C1  00F0               movwf	((??_main+0)+0),f
+   313  06C2                     u2387:
+   314  06C2  0BF0               	decfsz	((??_main+0)+0),f
+   315  06C3  2EC2               	goto	u2387
+   316  06C4  0BF1               	decfsz	((??_main+0)+0+1),f
+   317  06C5  2EC2               	goto	u2387
+   318  06C6  0BF2               	decfsz	((??_main+0)+0+2),f
+   319  06C7  2EC2               	goto	u2387
+   320                           opt asmopt_on
+   321                           
+   322                           	line	27
+   323                           ;MATRIX_LED.C: 27: }
+   324  06C8  2F1C               	goto	l566
+   325                           	line	28
+   326                           	
+   327  06C9                     l562:	
+   328                           ;MATRIX_LED.C: 28: else if(RB4==1)
+   329  06C9  1283               	bcf	status, 5	;RP0=0, select bank0
+   330  06CA  1303               	bcf	status, 6	;RP1=0, select bank0
+   331  06CB  1E06               	btfss	(52/8),(52)&7
+   332  06CC  2ECE               	goto	u2161
+   333  06CD  2ECF               	goto	u2160
+   334  06CE                     u2161:
+   335  06CE  2EE5               	goto	l567
+   336  06CF                     u2160:
+   337                           	line	29
+   338                           	
+   339  06CF                     l1800:	
+   340                           ;MATRIX_LED.C: 29: {while(RB4==1);
+   341  06CF  2ED0               	goto	l568
+   342                           	
+   343  06D0                     l569:	
+   344                           	
+   345  06D0                     l568:	
+   346  06D0  1A06               	btfsc	(52/8),(52)&7
+   347  06D1  2ED3               	goto	u2171
+   348  06D2  2ED4               	goto	u2170
+   349  06D3                     u2171:
+   350  06D3  2ED0               	goto	l569
+   351  06D4                     u2170:
+   352                           	
+   353  06D4                     l570:	
+   354                           	line	30
+   355                           	
+   356  06D4                     l1802:	
+   357                           ;MATRIX_LED.C: 30: PORTC=0X80;
+   358  06D4  3080               	movlw	(080h)
+   359  06D5  0087               	movwf	(7)	;volatile
+   360                           	line	31
+   361                           ;MATRIX_LED.C: 31: PORTD=0X07;
+   362  06D6  3007               	movlw	(07h)
+   363  06D7  0088               	movwf	(8)	;volatile
+   364                           	line	32
+   365                           ;MATRIX_LED.C: 32: _delay((unsigned long)((500)*(4000000/4000.0)));
+   366                           	opt asmopt_off
+   367  06D8  3003               movlw  3
+   368  06D9  00F2               movwf	((??_main+0)+0+2),f
+   369  06DA  3088               movlw	136
+   370  06DB  00F1               movwf	((??_main+0)+0+1),f
+   371  06DC  3056               	movlw	86
+   372  06DD  00F0               movwf	((??_main+0)+0),f
+   373  06DE                     u2397:
+   374  06DE  0BF0               	decfsz	((??_main+0)+0),f
+   375  06DF  2EDE               	goto	u2397
+   376  06E0  0BF1               	decfsz	((??_main+0)+0+1),f
+   377  06E1  2EDE               	goto	u2397
+   378  06E2  0BF2               	decfsz	((??_main+0)+0+2),f
+   379  06E3  2EDE               	goto	u2397
+   380                           opt asmopt_on
+   381                           
+   382                           	line	33
+   383                           ;MATRIX_LED.C: 33: }
+   384  06E4  2F1C               	goto	l571
+   385                           	line	34
+   386                           	
+   387  06E5                     l567:	
+   388                           ;MATRIX_LED.C: 34: else if(RB5==1)
+   389  06E5  1283               	bcf	status, 5	;RP0=0, select bank0
+   390  06E6  1303               	bcf	status, 6	;RP1=0, select bank0
+   391  06E7  1E86               	btfss	(53/8),(53)&7
+   392  06E8  2EEA               	goto	u2181
+   393  06E9  2EEB               	goto	u2180
+   394  06EA                     u2181:
+   395  06EA  2F01               	goto	l572
+   396  06EB                     u2180:
+   397                           	line	36
+   398                           	
+   399  06EB                     l1804:	
+   400                           ;MATRIX_LED.C: 35: {
+   401                           ;MATRIX_LED.C: 36: while(RB5==1);
+   402  06EB  2EEC               	goto	l573
+   403                           	
+   404  06EC                     l574:	
+   405                           	
+   406  06EC                     l573:	
+   407  06EC  1A86               	btfsc	(53/8),(53)&7
+   408  06ED  2EEF               	goto	u2191
+   409  06EE  2EF0               	goto	u2190
+   410  06EF                     u2191:
+   411  06EF  2EEC               	goto	l574
+   412  06F0                     u2190:
+   413                           	
+   414  06F0                     l575:	
+   415                           	line	37
+   416                           	
+   417  06F0                     l1806:	
+   418                           ;MATRIX_LED.C: 37: PORTC=0X80;
+   419  06F0  3080               	movlw	(080h)
+   420  06F1  0087               	movwf	(7)	;volatile
+   421                           	line	38
+   422                           ;MATRIX_LED.C: 38: PORTD=0X3F;
+   423  06F2  303F               	movlw	(03Fh)
+   424  06F3  0088               	movwf	(8)	;volatile
+   425                           	line	39
+   426                           ;MATRIX_LED.C: 39: _delay((unsigned long)((500)*(4000000/4000.0)));
+   427                           	opt asmopt_off
+   428  06F4  3003               movlw  3
+   429  06F5  00F2               movwf	((??_main+0)+0+2),f
+   430  06F6  3088               movlw	136
+   431  06F7  00F1               movwf	((??_main+0)+0+1),f
+   432  06F8  3056               	movlw	86
+   433  06F9  00F0               movwf	((??_main+0)+0),f
+   434  06FA                     u2407:
+   435  06FA  0BF0               	decfsz	((??_main+0)+0),f
+   436  06FB  2EFA               	goto	u2407
+   437  06FC  0BF1               	decfsz	((??_main+0)+0+1),f
+   438  06FD  2EFA               	goto	u2407
+   439  06FE  0BF2               	decfsz	((??_main+0)+0+2),f
+   440  06FF  2EFA               	goto	u2407
+   441                           opt asmopt_on
+   442                           
+   443                           	line	40
+   444                           ;MATRIX_LED.C: 40: }
+   445  0700  2F1C               	goto	l576
+   446                           	line	41
+   447                           	
+   448  0701                     l572:	
+   449                           ;MATRIX_LED.C: 41: else if(RB6==1)
+   450  0701  1283               	bcf	status, 5	;RP0=0, select bank0
+   451  0702  1303               	bcf	status, 6	;RP1=0, select bank0
+   452  0703  1F06               	btfss	(54/8),(54)&7
+   453  0704  2F06               	goto	u2201
+   454  0705  2F07               	goto	u2200
+   455  0706                     u2201:
+   456  0706  2F1C               	goto	l577
+   457  0707                     u2200:
+   458                           	line	43
+   459                           	
+   460  0707                     l1808:	
+   461                           ;MATRIX_LED.C: 42: {
+   462                           ;MATRIX_LED.C: 43: while(RB6==1);
+   463  0707  2F08               	goto	l578
+   464                           	
+   465  0708                     l579:	
+   466                           	
+   467  0708                     l578:	
+   468  0708  1B06               	btfsc	(54/8),(54)&7
+   469  0709  2F0B               	goto	u2211
+   470  070A  2F0C               	goto	u2210
+   471  070B                     u2211:
+   472  070B  2F08               	goto	l579
+   473  070C                     u2210:
+   474                           	
+   475  070C                     l580:	
+   476                           	line	44
+   477                           	
+   478  070C                     l1810:	
+   479                           ;MATRIX_LED.C: 44: PORTC=0X80;
+   480  070C  3080               	movlw	(080h)
+   481  070D  0087               	movwf	(7)	;volatile
+   482                           	line	45
+   483                           ;MATRIX_LED.C: 45: PORTD=0XCC;
+   484  070E  30CC               	movlw	(0CCh)
+   485  070F  0088               	movwf	(8)	;volatile
+   486                           	line	46
+   487                           ;MATRIX_LED.C: 46: _delay((unsigned long)((500)*(4000000/4000.0)));
+   488                           	opt asmopt_off
+   489  0710  3003               movlw  3
+   490  0711  00F2               movwf	((??_main+0)+0+2),f
+   491  0712  3088               movlw	136
+   492  0713  00F1               movwf	((??_main+0)+0+1),f
+   493  0714  3056               	movlw	86
+   494  0715  00F0               movwf	((??_main+0)+0),f
+   495  0716                     u2417:
+   496  0716  0BF0               	decfsz	((??_main+0)+0),f
+   497  0717  2F16               	goto	u2417
+   498  0718  0BF1               	decfsz	((??_main+0)+0+1),f
+   499  0719  2F16               	goto	u2417
+   500  071A  0BF2               	decfsz	((??_main+0)+0+2),f
+   501  071B  2F16               	goto	u2417
+   502                           opt asmopt_on
+   503                           
+   504                           	line	47
+   505                           	
+   506  071C                     l577:	
+   507                           	line	48
+   508                           	
+   509  071C                     l576:	
+   510                           	
+   511  071C                     l571:	
+   512                           	
+   513  071C                     l566:	
+   514                           	
+   515  071C                     l1812:	
+   516                           ;MATRIX_LED.C: 47: }
+   517                           ;MATRIX_LED.C: 48: RB0=0,RB1=1,RB2=0;
+   518  071C  1283               	bcf	status, 5	;RP0=0, select bank0
+   519  071D  1303               	bcf	status, 6	;RP1=0, select bank0
+   520  071E  1006               	bcf	(48/8),(48)&7
+   521                           	
+   522  071F                     l1814:	
+   523  071F  1486               	bsf	(49/8),(49)&7
+   524                           	
+   525  0720                     l1816:	
+   526  0720  1106               	bcf	(50/8),(50)&7
+   527                           	line	49
+   528                           	
+   529  0721                     l1818:	
+   530                           ;MATRIX_LED.C: 49: if(RB3==1)
+   531  0721  1D86               	btfss	(51/8),(51)&7
+   532  0722  2F24               	goto	u2221
+   533  0723  2F25               	goto	u2220
+   534  0724                     u2221:
+   535  0724  2F3B               	goto	l581
+   536  0725                     u2220:
+   537                           	line	50
+   538                           	
+   539  0725                     l1820:	
+   540                           ;MATRIX_LED.C: 50: {while(RB3==1);
+   541  0725  2F26               	goto	l582
+   542                           	
+   543  0726                     l583:	
+   544                           	
+   545  0726                     l582:	
+   546  0726  1986               	btfsc	(51/8),(51)&7
+   547  0727  2F29               	goto	u2231
+   548  0728  2F2A               	goto	u2230
+   549  0729                     u2231:
+   550  0729  2F26               	goto	l583
+   551  072A                     u2230:
+   552                           	
+   553  072A                     l584:	
+   554                           	line	51
+   555                           	
+   556  072A                     l1822:	
+   557                           ;MATRIX_LED.C: 51: PORTC=0X80;
+   558  072A  3080               	movlw	(080h)
+   559  072B  0087               	movwf	(7)	;volatile
+   560                           	line	52
+   561                           ;MATRIX_LED.C: 52: PORTD=0X01;
+   562  072C  3001               	movlw	(01h)
+   563  072D  0088               	movwf	(8)	;volatile
+   564                           	line	53
+   565                           ;MATRIX_LED.C: 53: _delay((unsigned long)((500)*(4000000/4000.0)));
+   566                           	opt asmopt_off
+   567  072E  3003               movlw  3
+   568  072F  00F2               movwf	((??_main+0)+0+2),f
+   569  0730  3088               movlw	136
+   570  0731  00F1               movwf	((??_main+0)+0+1),f
+   571  0732  3056               	movlw	86
+   572  0733  00F0               movwf	((??_main+0)+0),f
+   573  0734                     u2427:
+   574  0734  0BF0               	decfsz	((??_main+0)+0),f
+   575  0735  2F34               	goto	u2427
+   576  0736  0BF1               	decfsz	((??_main+0)+0+1),f
+   577  0737  2F34               	goto	u2427
+   578  0738  0BF2               	decfsz	((??_main+0)+0+2),f
+   579  0739  2F34               	goto	u2427
+   580                           opt asmopt_on
+   581                           
+   582                           	line	54
+   583                           ;MATRIX_LED.C: 54: }
+   584  073A  2F8C               	goto	l585
+   585                           	line	55
+   586                           	
+   587  073B                     l581:	
+   588                           ;MATRIX_LED.C: 55: else if(RB4==1)
+   589  073B  1283               	bcf	status, 5	;RP0=0, select bank0
+   590  073C  1303               	bcf	status, 6	;RP1=0, select bank0
+   591  073D  1E06               	btfss	(52/8),(52)&7
+   592  073E  2F40               	goto	u2241
+   593  073F  2F41               	goto	u2240
+   594  0740                     u2241:
+   595  0740  2F57               	goto	l586
+   596  0741                     u2240:
+   597                           	line	56
+   598                           	
+   599  0741                     l1824:	
+   600                           ;MATRIX_LED.C: 56: {while(RB4==1);
+   601  0741  2F42               	goto	l587
+   602                           	
+   603  0742                     l588:	
+   604                           	
+   605  0742                     l587:	
+   606  0742  1A06               	btfsc	(52/8),(52)&7
+   607  0743  2F45               	goto	u2251
+   608  0744  2F46               	goto	u2250
+   609  0745                     u2251:
+   610  0745  2F42               	goto	l588
+   611  0746                     u2250:
+   612                           	
+   613  0746                     l589:	
+   614                           	line	57
+   615                           	
+   616  0746                     l1826:	
+   617                           ;MATRIX_LED.C: 57: PORTC=0X80;
+   618  0746  3080               	movlw	(080h)
+   619  0747  0087               	movwf	(7)	;volatile
+   620                           	line	58
+   621                           ;MATRIX_LED.C: 58: PORTD=0X0F;
+   622  0748  300F               	movlw	(0Fh)
+   623  0749  0088               	movwf	(8)	;volatile
+   624                           	line	59
+   625                           ;MATRIX_LED.C: 59: _delay((unsigned long)((500)*(4000000/4000.0)));
+   626                           	opt asmopt_off
+   627  074A  3003               movlw  3
+   628  074B  00F2               movwf	((??_main+0)+0+2),f
+   629  074C  3088               movlw	136
+   630  074D  00F1               movwf	((??_main+0)+0+1),f
+   631  074E  3056               	movlw	86
+   632  074F  00F0               movwf	((??_main+0)+0),f
+   633  0750                     u2437:
+   634  0750  0BF0               	decfsz	((??_main+0)+0),f
+   635  0751  2F50               	goto	u2437
+   636  0752  0BF1               	decfsz	((??_main+0)+0+1),f
+   637  0753  2F50               	goto	u2437
+   638  0754  0BF2               	decfsz	((??_main+0)+0+2),f
+   639  0755  2F50               	goto	u2437
+   640                           opt asmopt_on
+   641                           
+   642                           	line	60
+   643                           ;MATRIX_LED.C: 60: }
+   644  0756  2F8C               	goto	l590
+   645                           	line	61
+   646                           	
+   647  0757                     l586:	
+   648                           ;MATRIX_LED.C: 61: else if(RB5==1)
+   649  0757  1283               	bcf	status, 5	;RP0=0, select bank0
+   650  0758  1303               	bcf	status, 6	;RP1=0, select bank0
+   651  0759  1E86               	btfss	(53/8),(53)&7
+   652  075A  2F5C               	goto	u2261
+   653  075B  2F5D               	goto	u2260
+   654  075C                     u2261:
+   655  075C  2F73               	goto	l591
+   656  075D                     u2260:
+   657                           	line	63
+   658                           	
+   659  075D                     l1828:	
+   660                           ;MATRIX_LED.C: 62: {
+   661                           ;MATRIX_LED.C: 63: while(RB5==1);
+   662  075D  2F5E               	goto	l592
+   663                           	
+   664  075E                     l593:	
+   665                           	
+   666  075E                     l592:	
+   667  075E  1A86               	btfsc	(53/8),(53)&7
+   668  075F  2F61               	goto	u2271
+   669  0760  2F62               	goto	u2270
+   670  0761                     u2271:
+   671  0761  2F5E               	goto	l593
+   672  0762                     u2270:
+   673                           	
+   674  0762                     l594:	
+   675                           	line	64
+   676                           	
+   677  0762                     l1830:	
+   678                           ;MATRIX_LED.C: 64: PORTC=0X80;
+   679  0762  3080               	movlw	(080h)
+   680  0763  0087               	movwf	(7)	;volatile
+   681                           	line	65
+   682                           ;MATRIX_LED.C: 65: PORTD=0X7F;
+   683  0764  307F               	movlw	(07Fh)
+   684  0765  0088               	movwf	(8)	;volatile
+   685                           	line	66
+   686                           ;MATRIX_LED.C: 66: _delay((unsigned long)((500)*(4000000/4000.0)));
+   687                           	opt asmopt_off
+   688  0766  3003               movlw  3
+   689  0767  00F2               movwf	((??_main+0)+0+2),f
+   690  0768  3088               movlw	136
+   691  0769  00F1               movwf	((??_main+0)+0+1),f
+   692  076A  3056               	movlw	86
+   693  076B  00F0               movwf	((??_main+0)+0),f
+   694  076C                     u2447:
+   695  076C  0BF0               	decfsz	((??_main+0)+0),f
+   696  076D  2F6C               	goto	u2447
+   697  076E  0BF1               	decfsz	((??_main+0)+0+1),f
+   698  076F  2F6C               	goto	u2447
+   699  0770  0BF2               	decfsz	((??_main+0)+0+2),f
+   700  0771  2F6C               	goto	u2447
+   701                           opt asmopt_on
+   702                           
+   703                           	line	67
+   704                           ;MATRIX_LED.C: 67: }
+   705  0772  2F8C               	goto	l595
+   706                           	line	68
+   707                           	
+   708  0773                     l591:	
+   709                           ;MATRIX_LED.C: 68: else if(RB6==1)
+   710  0773  1283               	bcf	status, 5	;RP0=0, select bank0
+   711  0774  1303               	bcf	status, 6	;RP1=0, select bank0
+   712  0775  1F06               	btfss	(54/8),(54)&7
+   713  0776  2F78               	goto	u2281
+   714  0777  2F79               	goto	u2280
+   715  0778                     u2281:
+   716  0778  2F8C               	goto	l596
+   717  0779                     u2280:
+   718                           	line	70
+   719                           	
+   720  0779                     l1832:	
+   721                           ;MATRIX_LED.C: 69: {
+   722                           ;MATRIX_LED.C: 70: while(RB6==1);
+   723  0779  2F7A               	goto	l597
+   724                           	
+   725  077A                     l598:	
+   726                           	
+   727  077A                     l597:	
+   728  077A  1B06               	btfsc	(54/8),(54)&7
+   729  077B  2F7D               	goto	u2291
+   730  077C  2F7E               	goto	u2290
+   731  077D                     u2291:
+   732  077D  2F7A               	goto	l598
+   733  077E                     u2290:
+   734                           	
+   735  077E                     l599:	
+   736                           	line	71
+   737                           	
+   738  077E                     l1834:	
+   739                           ;MATRIX_LED.C: 71: PORTC=0X00;
+   740  077E  0187               	clrf	(7)	;volatile
+   741                           	line	72
+   742                           ;MATRIX_LED.C: 72: PORTD=0X00;
+   743  077F  0188               	clrf	(8)	;volatile
+   744                           	line	73
+   745                           	
+   746  0780                     l1836:	
+   747                           ;MATRIX_LED.C: 73: _delay((unsigned long)((500)*(4000000/4000.0)));
+   748                           	opt asmopt_off
+   749  0780  3003               movlw  3
+   750  0781  00F2               movwf	((??_main+0)+0+2),f
+   751  0782  3088               movlw	136
+   752  0783  00F1               movwf	((??_main+0)+0+1),f
+   753  0784  3056               	movlw	86
+   754  0785  00F0               movwf	((??_main+0)+0),f
+   755  0786                     u2457:
+   756  0786  0BF0               	decfsz	((??_main+0)+0),f
+   757  0787  2F86               	goto	u2457
+   758  0788  0BF1               	decfsz	((??_main+0)+0+1),f
+   759  0789  2F86               	goto	u2457
+   760  078A  0BF2               	decfsz	((??_main+0)+0+2),f
+   761  078B  2F86               	goto	u2457
+   762                           opt asmopt_on
+   763                           
+   764                           	line	74
+   765                           	
+   766  078C                     l596:	
+   767                           	line	75
+   768                           	
+   769  078C                     l595:	
+   770                           	
+   771  078C                     l590:	
+   772                           	
+   773  078C                     l585:	
+   774                           	
+   775  078C                     l1838:	
+   776                           ;MATRIX_LED.C: 74: }
+   777                           ;MATRIX_LED.C: 75: RB0=0,RB1=0,RB2=1;
+   778  078C  1283               	bcf	status, 5	;RP0=0, select bank0
+   779  078D  1303               	bcf	status, 6	;RP1=0, select bank0
+   780  078E  1006               	bcf	(48/8),(48)&7
+   781                           	
+   782  078F                     l1840:	
+   783  078F  1086               	bcf	(49/8),(49)&7
+   784                           	
+   785  0790                     l1842:	
+   786  0790  1506               	bsf	(50/8),(50)&7
+   787                           	line	76
+   788                           	
+   789  0791                     l1844:	
+   790                           ;MATRIX_LED.C: 76: if(RB3==1)
+   791  0791  1D86               	btfss	(51/8),(51)&7
+   792  0792  2F94               	goto	u2301
+   793  0793  2F95               	goto	u2300
+   794  0794                     u2301:
+   795  0794  2FAB               	goto	l600
+   796  0795                     u2300:
+   797                           	line	77
+   798                           	
+   799  0795                     l1846:	
+   800                           ;MATRIX_LED.C: 77: {while(RB3==1);
+   801  0795  2F96               	goto	l601
+   802                           	
+   803  0796                     l602:	
+   804                           	
+   805  0796                     l601:	
+   806  0796  1986               	btfsc	(51/8),(51)&7
+   807  0797  2F99               	goto	u2311
+   808  0798  2F9A               	goto	u2310
+   809  0799                     u2311:
+   810  0799  2F96               	goto	l602
+   811  079A                     u2310:
+   812                           	
+   813  079A                     l603:	
+   814                           	line	78
+   815                           	
+   816  079A                     l1848:	
+   817                           ;MATRIX_LED.C: 78: PORTC=0X80;
+   818  079A  3080               	movlw	(080h)
+   819  079B  0087               	movwf	(7)	;volatile
+   820                           	line	79
+   821                           ;MATRIX_LED.C: 79: PORTD=0X03;
+   822  079C  3003               	movlw	(03h)
+   823  079D  0088               	movwf	(8)	;volatile
+   824                           	line	80
+   825                           ;MATRIX_LED.C: 80: _delay((unsigned long)((500)*(4000000/4000.0)));
+   826                           	opt asmopt_off
+   827  079E  3003               movlw  3
+   828  079F  00F2               movwf	((??_main+0)+0+2),f
+   829  07A0  3088               movlw	136
+   830  07A1  00F1               movwf	((??_main+0)+0+1),f
+   831  07A2  3056               	movlw	86
+   832  07A3  00F0               movwf	((??_main+0)+0),f
+   833  07A4                     u2467:
+   834  07A4  0BF0               	decfsz	((??_main+0)+0),f
+   835  07A5  2FA4               	goto	u2467
+   836  07A6  0BF1               	decfsz	((??_main+0)+0+1),f
+   837  07A7  2FA4               	goto	u2467
+   838  07A8  0BF2               	decfsz	((??_main+0)+0+2),f
+   839  07A9  2FA4               	goto	u2467
+   840                           opt asmopt_on
+   841                           
+   842                           	line	81
+   843                           ;MATRIX_LED.C: 81: }
+   844  07AA  2FFC               	goto	l604
+   845                           	line	82
+   846                           	
+   847  07AB                     l600:	
+   848                           ;MATRIX_LED.C: 82: else if(RB4==1)
+   849  07AB  1283               	bcf	status, 5	;RP0=0, select bank0
+   850  07AC  1303               	bcf	status, 6	;RP1=0, select bank0
+   851  07AD  1E06               	btfss	(52/8),(52)&7
+   852  07AE  2FB0               	goto	u2321
+   853  07AF  2FB1               	goto	u2320
+   854  07B0                     u2321:
+   855  07B0  2FC7               	goto	l605
+   856  07B1                     u2320:
+   857                           	line	83
+   858                           	
+   859  07B1                     l1850:	
+   860                           ;MATRIX_LED.C: 83: {while(RB4==1);
+   861  07B1  2FB2               	goto	l606
+   862                           	
+   863  07B2                     l607:	
+   864                           	
+   865  07B2                     l606:	
+   866  07B2  1A06               	btfsc	(52/8),(52)&7
+   867  07B3  2FB5               	goto	u2331
+   868  07B4  2FB6               	goto	u2330
+   869  07B5                     u2331:
+   870  07B5  2FB2               	goto	l607
+   871  07B6                     u2330:
+   872                           	
+   873  07B6                     l608:	
+   874                           	line	84
+   875                           	
+   876  07B6                     l1852:	
+   877                           ;MATRIX_LED.C: 84: PORTC=0X80;
+   878  07B6  3080               	movlw	(080h)
+   879  07B7  0087               	movwf	(7)	;volatile
+   880                           	line	85
+   881                           ;MATRIX_LED.C: 85: PORTD=0X1F;
+   882  07B8  301F               	movlw	(01Fh)
+   883  07B9  0088               	movwf	(8)	;volatile
+   884                           	line	86
+   885                           ;MATRIX_LED.C: 86: _delay((unsigned long)((500)*(4000000/4000.0)));
+   886                           	opt asmopt_off
+   887  07BA  3003               movlw  3
+   888  07BB  00F2               movwf	((??_main+0)+0+2),f
+   889  07BC  3088               movlw	136
+   890  07BD  00F1               movwf	((??_main+0)+0+1),f
+   891  07BE  3056               	movlw	86
+   892  07BF  00F0               movwf	((??_main+0)+0),f
+   893  07C0                     u2477:
+   894  07C0  0BF0               	decfsz	((??_main+0)+0),f
+   895  07C1  2FC0               	goto	u2477
+   896  07C2  0BF1               	decfsz	((??_main+0)+0+1),f
+   897  07C3  2FC0               	goto	u2477
+   898  07C4  0BF2               	decfsz	((??_main+0)+0+2),f
+   899  07C5  2FC0               	goto	u2477
+   900                           opt asmopt_on
+   901                           
+   902                           	line	87
+   903                           ;MATRIX_LED.C: 87: }
+   904  07C6  2FFC               	goto	l609
+   905                           	line	88
+   906                           	
+   907  07C7                     l605:	
+   908                           ;MATRIX_LED.C: 88: else if(RB5==1)
+   909  07C7  1283               	bcf	status, 5	;RP0=0, select bank0
+   910  07C8  1303               	bcf	status, 6	;RP1=0, select bank0
+   911  07C9  1E86               	btfss	(53/8),(53)&7
+   912  07CA  2FCC               	goto	u2341
+   913  07CB  2FCD               	goto	u2340
+   914  07CC                     u2341:
+   915  07CC  2FE3               	goto	l610
+   916  07CD                     u2340:
+   917                           	line	90
+   918                           	
+   919  07CD                     l1854:	
+   920                           ;MATRIX_LED.C: 89: {
+   921                           ;MATRIX_LED.C: 90: while(RB5==1);
+   922  07CD  2FCE               	goto	l611
+   923                           	
+   924  07CE                     l612:	
+   925                           	
+   926  07CE                     l611:	
+   927  07CE  1A86               	btfsc	(53/8),(53)&7
+   928  07CF  2FD1               	goto	u2351
+   929  07D0  2FD2               	goto	u2350
+   930  07D1                     u2351:
+   931  07D1  2FCE               	goto	l612
+   932  07D2                     u2350:
+   933                           	
+   934  07D2                     l613:	
+   935                           	line	91
+   936                           	
+   937  07D2                     l1856:	
+   938                           ;MATRIX_LED.C: 91: PORTC=0X80;
+   939  07D2  3080               	movlw	(080h)
+   940  07D3  0087               	movwf	(7)	;volatile
+   941                           	line	92
+   942                           ;MATRIX_LED.C: 92: PORTD=0XFF;
+   943  07D4  30FF               	movlw	(0FFh)
+   944  07D5  0088               	movwf	(8)	;volatile
+   945                           	line	93
+   946                           ;MATRIX_LED.C: 93: _delay((unsigned long)((500)*(4000000/4000.0)));
+   947                           	opt asmopt_off
+   948  07D6  3003               movlw  3
+   949  07D7  00F2               movwf	((??_main+0)+0+2),f
+   950  07D8  3088               movlw	136
+   951  07D9  00F1               movwf	((??_main+0)+0+1),f
+   952  07DA  3056               	movlw	86
+   953  07DB  00F0               movwf	((??_main+0)+0),f
+   954  07DC                     u2487:
+   955  07DC  0BF0               	decfsz	((??_main+0)+0),f
+   956  07DD  2FDC               	goto	u2487
+   957  07DE  0BF1               	decfsz	((??_main+0)+0+1),f
+   958  07DF  2FDC               	goto	u2487
+   959  07E0  0BF2               	decfsz	((??_main+0)+0+2),f
+   960  07E1  2FDC               	goto	u2487
+   961                           opt asmopt_on
+   962                           
+   963                           	line	94
+   964                           ;MATRIX_LED.C: 94: }
+   965  07E2  2FFC               	goto	l614
+   966                           	line	95
+   967                           	
+   968  07E3                     l610:	
+   969                           ;MATRIX_LED.C: 95: else if(RB6==1)
+   970  07E3  1283               	bcf	status, 5	;RP0=0, select bank0
+   971  07E4  1303               	bcf	status, 6	;RP1=0, select bank0
+   972  07E5  1F06               	btfss	(54/8),(54)&7
+   973  07E6  2FE8               	goto	u2361
+   974  07E7  2FE9               	goto	u2360
+   975  07E8                     u2361:
+   976  07E8  2FFC               	goto	l615
+   977  07E9                     u2360:
+   978                           	line	97
+   979                           	
+   980  07E9                     l1858:	
+   981                           ;MATRIX_LED.C: 96: {
+   982                           ;MATRIX_LED.C: 97: while(RB6==1);
+   983  07E9  2FEA               	goto	l616
+   984                           	
+   985  07EA                     l617:	
+   986                           	
+   987  07EA                     l616:	
+   988  07EA  1B06               	btfsc	(54/8),(54)&7
+   989  07EB  2FED               	goto	u2371
+   990  07EC  2FEE               	goto	u2370
+   991  07ED                     u2371:
+   992  07ED  2FEA               	goto	l617
+   993  07EE                     u2370:
+   994                           	
+   995  07EE                     l618:	
+   996                           	line	98
+   997                           	
+   998  07EE                     l1860:	
+   999                           ;MATRIX_LED.C: 98: PORTD=0X99;
+  1000  07EE  3099               	movlw	(099h)
+  1001  07EF  0088               	movwf	(8)	;volatile
+  1002                           	line	99
+  1003                           ;MATRIX_LED.C: 99: _delay((unsigned long)((500)*(4000000/4000.0)));
+  1004                           	opt asmopt_off
+  1005  07F0  3003               movlw  3
+  1006  07F1  00F2               movwf	((??_main+0)+0+2),f
+  1007  07F2  3088               movlw	136
+  1008  07F3  00F1               movwf	((??_main+0)+0+1),f
+  1009  07F4  3056               	movlw	86
+  1010  07F5  00F0               movwf	((??_main+0)+0),f
+  1011  07F6                     u2497:
+  1012  07F6  0BF0               	decfsz	((??_main+0)+0),f
+  1013  07F7  2FF6               	goto	u2497
+  1014  07F8  0BF1               	decfsz	((??_main+0)+0+1),f
+  1015  07F9  2FF6               	goto	u2497
+  1016  07FA  0BF2               	decfsz	((??_main+0)+0+2),f
+  1017  07FB  2FF6               	goto	u2497
+  1018                           opt asmopt_on
+  1019                           
+  1020                           	line	100
+  1021                           	
+  1022  07FC                     l615:	
+  1023                           	line	101
+  1024                           	
+  1025  07FC                     l614:	
+  1026                           	
+  1027  07FC                     l609:	
+  1028                           	
+  1029  07FC                     l604:	
+  1030                           	
+  1031  07FC                     l619:	
+  1032                           	line	20
+  1033  07FC  2EAE               	goto	l561
+  1034                           	
+  1035  07FD                     l620:	
+  1036                           	line	102
+  1037                           	
+  1038  07FD                     l621:	
+  1039                           	global	start
+  1040  07FD  120A  118A  2800   	ljmp	start
+  1041                           	opt stack 0
+  1042                           GLOBAL	__end_of_main
+  1043  0800                     	__end_of_main:
+  1044 ;; =============== function _main ends ============
+  1045                           
+  1046                           	signat	_main,88
+  1047                           psect	maintext
+  1048                           	global	btemp
+  1049  007E                     	btemp set 07Eh
+  1050                           
+  1051                           	DABS	1,126,2	;btemp
+  1052                           	global	wtemp0
+  1053  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.71a build 6446 
+Symbol Table                                                                                   Wed Nov 01 18:04:06 2023
+
+                 l600 07AB                   l601 0796                   l610 07E3                   l602 0796  
+                 l611 07CE                   l603 079A                   l620 07FD                   l612 07CE  
+                 l604 07FC                   l621 07FD                   l613 07D2                   l605 07C7  
+                 l614 07FC                   l606 07B2                   l615 07FC                   l607 07B2  
+                 l616 07EA                   l608 07B6                   l617 07EA                   l609 07FC  
+                 l561 06AE                   l618 07EE                   l570 06D4                   l562 06C9  
+                 l619 07FC                   l571 071C                   l563 06B6                   l580 070C  
+                 l572 0701                   l564 06B6                   l581 073B                   l573 06EC  
+                 l565 06BA                   l590 078C                   l582 0726                   l574 06EC  
+                 l566 071C                   l591 0773                   l583 0726                   l575 06F0  
+                 l567 06E5                   l592 075E                   l584 072A                   l576 071C  
+                 l568 06D0                   l593 075E                   l585 078C                   l577 071C  
+                 l569 06D0                   l594 0762                   l586 0757                   l578 0708  
+                 l595 078C                   l587 0742                   l579 0708                   l596 078C  
+                 l588 0742                   l597 077A                   l589 0746                   l598 077A  
+                 l599 077E                   _RB0 0030                   _RB1 0031                   _RB2 0032  
+                 _RB3 0033                   _RB4 0034                   _RB5 0035                   _RB6 0036  
+                l1800 06CF                  l1810 070C                  l1802 06D4                  l1820 0725  
+                l1812 071C                  l1804 06EB                  l1830 0762                  l1822 072A  
+                l1814 071F                  l1806 06F0                  l1840 078F                  l1832 0779  
+                l1824 0741                  l1816 0720                  l1808 0707                  l1850 07B1  
+                l1842 0790                  l1834 077E                  l1826 0746                  l1818 0721  
+                l1860 07EE                  l1852 07B6                  l1844 0791                  l1836 0780  
+                l1828 075D                  l1780 06A8                  l1854 07CD                  l1846 0795  
+                l1838 078C                  l1790 06AF                  l1782 06A9                  l1856 07D2  
+                l1848 079A                  l1792 06B0                  l1784 06AC                  l1776 06A3  
+                l1858 07E9                  l1794 06B1                  l1786 06AD                  l1778 06A7  
+                l1796 06B5                  l1788 06AE                  l1798 06BA                  u2200 0707  
+                u2201 0706                  u2210 070C                  u2211 070B                  u2300 0795  
+                u2220 0725                  u2140 06B5                  u2301 0794                  u2221 0724  
+                u2141 06B4                  u2310 079A                  u2230 072A                  u2150 06BA  
+                u2311 0799                  u2231 0729                  u2151 06B9                  u2320 07B1  
+                u2240 0741                  u2160 06CF                  u2321 07B0                  u2241 0740  
+                u2161 06CE                  u2330 07B6                  u2250 0746                  u2170 06D4  
+                u2331 07B5                  u2251 0745                  u2171 06D3                  u2340 07CD  
+                u2260 075D                  u2180 06EB                  u2341 07CC                  u2261 075C  
+                u2181 06EA                  u2350 07D2                  u2270 0762                  u2190 06F0  
+                u2351 07D1                  u2271 0761                  u2407 06FA                  u2191 06EF  
+                u2360 07E9                  u2280 0779                  u2361 07E8                  u2281 0778  
+                u2417 0716                  u2370 07EE                  u2290 077E                  u2371 07ED  
+                u2291 077D                  u2427 0734                  u2437 0750                  u2447 076C  
+                u2457 0786                  u2467 07A4                  u2387 06C2                  u2477 07C0  
+                u2397 06DE                  u2487 07DC                  u2497 07F6                  _main 06A3  
+                btemp 007E                  start 0000                 ?_main 0070                 _PORTB 0006  
+               _PORTC 0007                 _PORTD 0008                 _TRISB 0086                 _TRISC 0087  
+               _TRISD 0088                 status 0003                 wtemp0 007E          __end_of_main 0800  
+              ??_main 0070        __pcstackCOMMON 0070            __pmaintext 06A3  end_of_initialization 069F  
+ start_initialization 069F         __size_of_main 015D  
