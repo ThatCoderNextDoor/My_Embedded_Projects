@@ -1,0 +1,10 @@
+_read: CODE, 1157 0 30
+_main: CODE, 1218 0 205
+_output: CODE, 1187 0 31
+_data: CODE, 1083 0 19
+_choose_party: CODE, 1423 0 226
+_write: CODE, 1127 0 30
+_initial: CODE, 1102 0 25
+_command: CODE, 1064 0 19
+_result: CODE, 1649 0 399
+Total: 984
