@@ -1,0 +1,39 @@
+#include<pic.h>
+__CONFIG(0x3F72);
+
+void loadvalue(int x)
+{
+if(x>50)
+{int y=x/50;
+for(int i=0;i<y;i++)
+{
+TMR0=59.6875;
+while(TMR0IF==0);
+TMR0IF=0;
+}
+}
+else
+{
+float temp= ((x*1000)/256);
+float load=255-temp;
+TMR0=load;
+while(TMR0IF==0);
+TMR0IF=0;
+}
+}
+void delay(int num)
+{
+PS0=1;PS1=1;PS2=1;
+T0CS=0;
+PSA=0;
+loadvalue(num);
+}
+
+void main()
+{
+TRISD=0X00;
+PORTD=0X01;
+delay(20);
+PORTD=0X00;
+delay(20);
+}
