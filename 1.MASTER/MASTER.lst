@@ -1,0 +1,506 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.71a build 6446 
+                                                                                               Sun Jan 07 10:21:36 2024
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6446
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6446"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_master_initial
+    43                           	FNCALL	_main,_master_trans
+    44                           	FNROOT	_main
+    45                           	global	_PORTC
+    46                           psect	text72,local,class=CODE,delta=2
+    47                           global __ptext72
+    48  0000                     __ptext72:
+    49  0007                     _PORTC	set	7
+    50                           	global	_PORTD
+    51  0008                     _PORTD	set	8
+    52                           	global	_SSPBUF
+    53  0013                     _SSPBUF	set	19
+    54                           	global	_CKP
+    55  00A4                     _CKP	set	164
+    56                           	global	_RD0
+    57  0040                     _RD0	set	64
+    58                           	global	_SSPEN
+    59  00A5                     _SSPEN	set	165
+    60                           	global	_SSPM0
+    61  00A0                     _SSPM0	set	160
+    62                           	global	_SSPM1
+    63  00A1                     _SSPM1	set	161
+    64                           	global	_SSPM2
+    65  00A2                     _SSPM2	set	162
+    66                           	global	_SSPM3
+    67  00A3                     _SSPM3	set	163
+    68                           	global	_TRISC
+    69  0087                     _TRISC	set	135
+    70                           	global	_TRISD
+    71  0088                     _TRISD	set	136
+    72                           	global	_CKE
+    73  04A6                     _CKE	set	1190
+    74                           	global	_SMP
+    75  04A7                     _SMP	set	1191
+    76                           	file	"MASTER.as"
+    77                           	line	#
+    78                           psect cinit,class=CODE,delta=2
+    79                           global start_initialization
+    80  07BF                     start_initialization:
+    81                           
+    82                           psect cinit,class=CODE,delta=2
+    83                           global end_of_initialization
+    84                           
+    85                           ;End of C runtime variable initialization code
+    86                           
+    87  07BF                     end_of_initialization:
+    88  07BF  0183               clrf status
+    89  07C0  120A  118A  2FD6   ljmp _main	;jump to C main() function
+    90                           psect	cstackCOMMON,class=COMMON,space=1
+    91                           global __pcstackCOMMON
+    92  0070                     __pcstackCOMMON:
+    93                           	global	?_master_initial
+    94  0070                     ?_master_initial:	; 0 bytes @ 0x0
+    95                           	global	??_master_initial
+    96  0070                     ??_master_initial:	; 0 bytes @ 0x0
+    97                           	global	?_master_trans
+    98  0070                     ?_master_trans:	; 0 bytes @ 0x0
+    99                           	global	??_master_trans
+   100  0070                     ??_master_trans:	; 0 bytes @ 0x0
+   101                           	global	?_main
+   102  0070                     ?_main:	; 0 bytes @ 0x0
+   103                           	global	master_trans@x
+   104  0070                     master_trans@x:	; 1 bytes @ 0x0
+   105  0070                     	ds	1
+   106                           	global	??_main
+   107  0071                     ??_main:	; 0 bytes @ 0x1
+   108 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   109 ;;Auto spaces:   Size  Autos    Used
+   110 ;; COMMON          14      1       1
+   111 ;; BANK0           80      0       0
+   112 ;; BANK1           80      0       0
+   113 ;; BANK3           96      0       0
+   114 ;; BANK2           96      0       0
+   115                           
+   116 ;;
+   117 ;; Pointer list with targets:
+   118                           
+   119                           
+   120                           
+   121 ;;
+   122 ;; Critical Paths under _main in COMMON
+   123 ;;
+   124 ;;   _main->_master_trans
+   125 ;;
+   126 ;; Critical Paths under _main in BANK0
+   127 ;;
+   128 ;;   None.
+   129 ;;
+   130 ;; Critical Paths under _main in BANK1
+   131 ;;
+   132 ;;   None.
+   133 ;;
+   134 ;; Critical Paths under _main in BANK3
+   135 ;;
+   136 ;;   None.
+   137 ;;
+   138 ;; Critical Paths under _main in BANK2
+   139 ;;
+   140 ;;   None.
+   141                           
+   142 ;;
+   143 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   144 ;;
+   145                           
+   146 ;;
+   147 ;;Call Graph Tables:
+   148 ;;
+   149 ;; ---------------------------------------------------------------------------------
+   150 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   151 ;; ---------------------------------------------------------------------------------
+   152 ;; (0) _main                                                 0     0      0      15
+   153 ;;                     _master_initial
+   154 ;;                       _master_trans
+   155 ;; ---------------------------------------------------------------------------------
+   156 ;; (1) _master_trans                                         1     1      0      15
+   157 ;;                                              0 COMMON     1     1      0
+   158 ;; ---------------------------------------------------------------------------------
+   159 ;; (1) _master_initial                                       0     0      0       0
+   160 ;; ---------------------------------------------------------------------------------
+   161 ;; Estimated maximum stack depth 1
+   162 ;; ---------------------------------------------------------------------------------
+   163                           
+   164 ;; Call Graph Graphs:
+   165                           
+   166 ;; _main (ROOT)
+   167 ;;   _master_initial
+   168 ;;   _master_trans
+   169 ;;
+   170                           
+   171 ;; Address spaces:
+   172                           
+   173 ;;Name               Size   Autos  Total    Cost      Usage
+   174 ;;BITCOMMON            E      0       0       0        0.0%
+   175 ;;EEDATA             100      0       0       0        0.0%
+   176 ;;NULL                 0      0       0       0        0.0%
+   177 ;;CODE                 0      0       0       0        0.0%
+   178 ;;COMMON               E      1       1       1        7.1%
+   179 ;;BITSFR0              0      0       0       1        0.0%
+   180 ;;SFR0                 0      0       0       1        0.0%
+   181 ;;BITSFR1              0      0       0       2        0.0%
+   182 ;;SFR1                 0      0       0       2        0.0%
+   183 ;;STACK                0      0       1       2        0.0%
+   184 ;;ABS                  0      0       0       3        0.0%
+   185 ;;BITBANK0            50      0       0       4        0.0%
+   186 ;;BITSFR3              0      0       0       4        0.0%
+   187 ;;SFR3                 0      0       0       4        0.0%
+   188 ;;BANK0               50      0       0       5        0.0%
+   189 ;;BITSFR2              0      0       0       5        0.0%
+   190 ;;SFR2                 0      0       0       5        0.0%
+   191 ;;BITBANK1            50      0       0       6        0.0%
+   192 ;;BANK1               50      0       0       7        0.0%
+   193 ;;BITBANK3            60      0       0       8        0.0%
+   194 ;;BANK3               60      0       0       9        0.0%
+   195 ;;BITBANK2            60      0       0      10        0.0%
+   196 ;;BANK2               60      0       0      11        0.0%
+   197 ;;DATA                 0      0       0      12        0.0%
+   198                           
+   199                           	global	_main
+   200                           psect	maintext,global,class=CODE,delta=2
+   201                           global __pmaintext
+   202  07D6                     __pmaintext:
+   203                           
+   204 ;; *************** function _main *****************
+   205 ;; Defined at:
+   206 ;;		line 17 in file "C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\1.MASTER\..\1.MASTER\MASTER.C"
+   207 ;; Parameters:    Size  Location     Type
+   208 ;;		None
+   209 ;; Auto vars:     Size  Location     Type
+   210 ;;		None
+   211 ;; Return value:  Size  Location     Type
+   212 ;;		None               void
+   213 ;; Registers used:
+   214 ;;		wreg, status,2, status,0, pclath, cstack
+   215 ;; Tracked objects:
+   216 ;;		On entry : 17F/0
+   217 ;;		On exit  : 0/0
+   218 ;;		Unchanged: 0/0
+   219 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   220 ;;      Params:         0       0       0       0       0
+   221 ;;      Locals:         0       0       0       0       0
+   222 ;;      Temps:          0       0       0       0       0
+   223 ;;      Totals:         0       0       0       0       0
+   224 ;;Total ram usage:        0 bytes
+   225 ;; Hardware stack levels required when called:    1
+   226 ;; This function calls:
+   227 ;;		_master_initial
+   228 ;;		_master_trans
+   229 ;; This function is called by:
+   230 ;;		Startup code after reset
+   231 ;; This function uses a non-reentrant model
+   232 ;;
+   233                           psect	maintext
+   234                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\1.MASTER\..\1.MASTER\MASTER.C"
+   235                           	line	17
+   236                           	global	__size_of_main
+   237  002A                     	__size_of_main	equ	__end_of_main-_main
+   238                           	
+   239  07D6                     _main:	
+   240                           	opt	stack 8
+   241                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   242                           	line	18
+   243                           	
+   244  07D6                     l1729:	
+   245                           ;MASTER.C: 18: TRISD=0X01;PORTD=0X00;
+   246  07D6  3001               	movlw	(01h)
+   247  07D7  1683               	bsf	status, 5	;RP0=1, select bank1
+   248  07D8  1303               	bcf	status, 6	;RP1=0, select bank1
+   249  07D9  0088               	movwf	(136)^080h	;volatile
+   250                           	
+   251  07DA                     l1731:	
+   252  07DA  1283               	bcf	status, 5	;RP0=0, select bank0
+   253  07DB  1303               	bcf	status, 6	;RP1=0, select bank0
+   254  07DC  0188               	clrf	(8)	;volatile
+   255                           	line	19
+   256                           	
+   257  07DD                     l1733:	
+   258                           ;MASTER.C: 19: TRISC=0X10;PORTC=0X00;
+   259  07DD  3010               	movlw	(010h)
+   260  07DE  1683               	bsf	status, 5	;RP0=1, select bank1
+   261  07DF  1303               	bcf	status, 6	;RP1=0, select bank1
+   262  07E0  0087               	movwf	(135)^080h	;volatile
+   263  07E1  1283               	bcf	status, 5	;RP0=0, select bank0
+   264  07E2  1303               	bcf	status, 6	;RP1=0, select bank0
+   265  07E3  0187               	clrf	(7)	;volatile
+   266                           	line	20
+   267                           	
+   268  07E4                     l1735:	
+   269                           ;MASTER.C: 20: master_initial();
+   270  07E4  120A  118A  27C9   	fcall	_master_initial
+              120A  118A         
+   271                           	line	21
+   272                           ;MASTER.C: 21: while(1)
+   273                           	
+   274  07E9                     l565:	
+   275                           	line	23
+   276                           	
+   277  07E9                     l1737:	
+   278                           ;MASTER.C: 22: {
+   279                           ;MASTER.C: 23: if(RD0==1)
+   280  07E9  1283               	bcf	status, 5	;RP0=0, select bank0
+   281  07EA  1303               	bcf	status, 6	;RP1=0, select bank0
+   282  07EB  1C08               	btfss	(64/8),(64)&7
+   283  07EC  2FEE               	goto	u2141
+   284  07ED  2FEF               	goto	u2140
+   285  07EE                     u2141:
+   286  07EE  2FF6               	goto	l566
+   287  07EF                     u2140:
+   288                           	line	25
+   289                           	
+   290  07EF                     l1739:	
+   291                           ;MASTER.C: 24: {
+   292                           ;MASTER.C: 25: master_trans('a');
+   293  07EF  3061               	movlw	(061h)
+   294  07F0  120A  118A  27C3   	fcall	_master_trans
+              120A  118A         
+   295                           	line	26
+   296                           ;MASTER.C: 26: }
+   297  07F5  2FFC               	goto	l567
+   298                           	line	27
+   299                           	
+   300  07F6                     l566:	
+   301                           	line	28
+   302                           	
+   303  07F6                     l1741:	
+   304                           ;MASTER.C: 27: else{
+   305                           ;MASTER.C: 28: master_trans('b');
+   306  07F6  3062               	movlw	(062h)
+   307  07F7  120A  118A  27C3   	fcall	_master_trans
+              120A  118A         
+   308                           	line	29
+   309                           	
+   310  07FC                     l567:	
+   311                           	line	30
+   312                           	
+   313  07FC                     l568:	
+   314                           	line	21
+   315  07FC  2FE9               	goto	l565
+   316                           	
+   317  07FD                     l569:	
+   318                           	line	31
+   319                           	
+   320  07FD                     l570:	
+   321                           	global	start
+   322  07FD  120A  118A  2800   	ljmp	start
+   323                           	opt stack 0
+   324                           GLOBAL	__end_of_main
+   325  0800                     	__end_of_main:
+   326 ;; =============== function _main ends ============
+   327                           
+   328                           	signat	_main,88
+   329                           	global	_master_trans
+   330                           psect	text73,local,class=CODE,delta=2
+   331                           global __ptext73
+   332  07C3                     __ptext73:
+   333                           
+   334 ;; *************** function _master_trans *****************
+   335 ;; Defined at:
+   336 ;;		line 12 in file "C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\1.MASTER\..\1.MASTER\MASTER.C"
+   337 ;; Parameters:    Size  Location     Type
+   338 ;;  x               1    wreg     unsigned char 
+   339 ;; Auto vars:     Size  Location     Type
+   340 ;;  x               1    0[COMMON] unsigned char 
+   341 ;; Return value:  Size  Location     Type
+   342 ;;		None               void
+   343 ;; Registers used:
+   344 ;;		wreg
+   345 ;; Tracked objects:
+   346 ;;		On entry : 0/0
+   347 ;;		On exit  : 0/0
+   348 ;;		Unchanged: 0/0
+   349 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   350 ;;      Params:         0       0       0       0       0
+   351 ;;      Locals:         1       0       0       0       0
+   352 ;;      Temps:          0       0       0       0       0
+   353 ;;      Totals:         1       0       0       0       0
+   354 ;;Total ram usage:        1 bytes
+   355 ;; Hardware stack levels used:    1
+   356 ;; This function calls:
+   357 ;;		Nothing
+   358 ;; This function is called by:
+   359 ;;		_main
+   360 ;; This function uses a non-reentrant model
+   361 ;;
+   362                           psect	text73
+   363                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\1.MASTER\..\1.MASTER\MASTER.C"
+   364                           	line	12
+   365                           	global	__size_of_master_trans
+   366  0006                     	__size_of_master_trans	equ	__end_of_master_trans-_master_trans
+   367                           	
+   368  07C3                     _master_trans:	
+   369                           	opt	stack 7
+   370                           ; Regs used in _master_trans: [wreg]
+   371                           ;master_trans@x stored from wreg
+   372  07C3  00F0               	movwf	(master_trans@x)
+   373                           	line	13
+   374                           	
+   375  07C4                     l941:	
+   376                           ;MASTER.C: 13: SSPBUF=x;
+   377  07C4  0870               	movf	(master_trans@x),w
+   378  07C5  1283               	bcf	status, 5	;RP0=0, select bank0
+   379  07C6  1303               	bcf	status, 6	;RP1=0, select bank0
+   380  07C7  0093               	movwf	(19)	;volatile
+   381                           	line	14
+   382                           	
+   383  07C8                     l562:	
+   384  07C8  0008               	return
+   385                           	opt stack 0
+   386                           GLOBAL	__end_of_master_trans
+   387  07C9                     	__end_of_master_trans:
+   388 ;; =============== function _master_trans ends ============
+   389                           
+   390                           	signat	_master_trans,4216
+   391                           	global	_master_initial
+   392                           psect	text74,local,class=CODE,delta=2
+   393                           global __ptext74
+   394  07C9                     __ptext74:
+   395                           
+   396 ;; *************** function _master_initial *****************
+   397 ;; Defined at:
+   398 ;;		line 5 in file "C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\1.MASTER\..\1.MASTER\MASTER.C"
+   399 ;; Parameters:    Size  Location     Type
+   400 ;;		None
+   401 ;; Auto vars:     Size  Location     Type
+   402 ;;		None
+   403 ;; Return value:  Size  Location     Type
+   404 ;;		None               void
+   405 ;; Registers used:
+   406 ;;		None
+   407 ;; Tracked objects:
+   408 ;;		On entry : 0/0
+   409 ;;		On exit  : 0/0
+   410 ;;		Unchanged: 0/0
+   411 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   412 ;;      Params:         0       0       0       0       0
+   413 ;;      Locals:         0       0       0       0       0
+   414 ;;      Temps:          0       0       0       0       0
+   415 ;;      Totals:         0       0       0       0       0
+   416 ;;Total ram usage:        0 bytes
+   417 ;; Hardware stack levels used:    1
+   418 ;; This function calls:
+   419 ;;		Nothing
+   420 ;; This function is called by:
+   421 ;;		_main
+   422 ;; This function uses a non-reentrant model
+   423 ;;
+   424                           psect	text74
+   425                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\1.MASTER\..\1.MASTER\MASTER.C"
+   426                           	line	5
+   427                           	global	__size_of_master_initial
+   428  000D                     	__size_of_master_initial	equ	__end_of_master_initial-_master_initial
+   429                           	
+   430  07C9                     _master_initial:	
+   431                           	opt	stack 7
+   432                           ; Regs used in _master_initial: []
+   433                           	line	6
+   434                           	
+   435  07C9                     l939:	
+   436                           ;MASTER.C: 6: SMP=0;CKE=0;CKP=0;
+   437  07C9  1683               	bsf	status, 5	;RP0=1, select bank1
+   438  07CA  1303               	bcf	status, 6	;RP1=0, select bank1
+   439  07CB  1394               	bcf	(1191/8)^080h,(1191)&7
+   440  07CC  1314               	bcf	(1190/8)^080h,(1190)&7
+   441  07CD  1283               	bcf	status, 5	;RP0=0, select bank0
+   442  07CE  1303               	bcf	status, 6	;RP1=0, select bank0
+   443  07CF  1214               	bcf	(164/8),(164)&7
+   444                           	line	7
+   445                           ;MASTER.C: 7: SSPM3=0;SSPM2=0;SSPM1=0;SSPM0=0;
+   446  07D0  1194               	bcf	(163/8),(163)&7
+   447  07D1  1114               	bcf	(162/8),(162)&7
+   448  07D2  1094               	bcf	(161/8),(161)&7
+   449  07D3  1014               	bcf	(160/8),(160)&7
+   450                           	line	8
+   451                           ;MASTER.C: 8: SSPEN=1;
+   452  07D4  1694               	bsf	(165/8),(165)&7
+   453                           	line	9
+   454                           	
+   455  07D5                     l559:	
+   456  07D5  0008               	return
+   457                           	opt stack 0
+   458                           GLOBAL	__end_of_master_initial
+   459  07D6                     	__end_of_master_initial:
+   460 ;; =============== function _master_initial ends ============
+   461                           
+   462                           	signat	_master_initial,88
+   463                           psect	text75,local,class=CODE,delta=2
+   464                           global __ptext75
+   465  0000                     __ptext75:
+   466                           	global	btemp
+   467  007E                     	btemp set 07Eh
+   468                           
+   469                           	DABS	1,126,2	;btemp
+   470                           	global	wtemp0
+   471  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.71a build 6446 
+Symbol Table                                                                                   Sun Jan 07 10:21:36 2024
+
+                    l562 07C8                      l570 07FD                      l565 07E9  
+                    l566 07F6                      l559 07D5                      l567 07FC  
+                    l568 07FC                      l569 07FD                      l941 07C4  
+                    _CKE 04A6                      l939 07C9                      _CKP 00A4  
+                    _RD0 0040                      _SMP 04A7                     l1731 07DA  
+                   l1741 07F6                     l1733 07DD                     l1735 07E4  
+                   l1737 07E9                     l1729 07D6                     l1739 07EF  
+                   u2140 07EF                     u2141 07EE                     _main 07D6  
+                   btemp 007E         ??_master_initial 0070                     start 0000  
+                  ?_main 0070                    _PORTC 0007                    _PORTD 0008  
+                  _SSPM0 00A0                    _SSPM1 00A1                    _SSPM2 00A2  
+                  _SSPM3 00A3                    _TRISC 0087                    _TRISD 0088  
+                  _SSPEN 00A5                    status 0003                    wtemp0 007E  
+           __end_of_main 0800                   ??_main 0071                   _SSPBUF 0013  
+          ?_master_trans 0070           ??_master_trans 0070           __pcstackCOMMON 0070  
+             __pmaintext 07D6     __end_of_master_trans 07C9     end_of_initialization 07BF  
+__size_of_master_initial 000D      start_initialization 07BF    __size_of_master_trans 0006  
+           _master_trans 07C3           _master_initial 07C9   __end_of_master_initial 07D6  
+        ?_master_initial 0070                 __ptext72 0000                 __ptext73 07C3  
+               __ptext74 07C9                 __ptext75 0000            __size_of_main 002A  
+          master_trans@x 0070  
