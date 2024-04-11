@@ -1,0 +1,13 @@
+___awdiv: CODE, 1102 0 112
+_delay: CODE, 844 0 18
+___ftpack: CODE, 1214 0 117
+___awmod: CODE, 1006 0 96
+_main: CODE, 1716 0 332
+_output: CODE, 929 0 31
+_data: CODE, 883 0 21
+_initial: CODE, 904 0 25
+___ftmul: CODE, 1487 0 229
+___awtoft: CODE, 960 0 46
+_command: CODE, 862 0 21
+___fttol: CODE, 1331 0 156
+Total: 1204
