@@ -1,0 +1,510 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.71a build 6446 
+                                                                                               Sun Oct 29 11:53:00 2023
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6446
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6446"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 2 "C:\Users\Lenovo\Desktop\PIC\TASK\25. WATER_TANK\WATER_TANK.C"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 2 "C:\Users\Lenovo\Desktop\PIC\TASK\25. WATER_TANK\WATER_TANK.C"
+    45  2007  3F72               	dw 0x3F72 ;#
+    46                           	FNROOT	_main
+    47                           	global	_PORTB
+    48                           psect	maintext,global,class=CODE,delta=2
+    49                           global __pmaintext
+    50  0781                     __pmaintext:
+    51  0006                     _PORTB	set	6
+    52                           	global	_RB0
+    53  0030                     _RB0	set	48
+    54                           	global	_RB1
+    55  0031                     _RB1	set	49
+    56                           	global	_TRISB
+    57  0086                     _TRISB	set	134
+    58                           	file	"WATER_TANK.as"
+    59                           	line	#
+    60                           psect cinit,class=CODE,delta=2
+    61                           global start_initialization
+    62  077D                     start_initialization:
+    63                           
+    64                           psect cinit,class=CODE,delta=2
+    65                           global end_of_initialization
+    66                           
+    67                           ;End of C runtime variable initialization code
+    68                           
+    69  077D                     end_of_initialization:
+    70  077D  0183               clrf status
+    71  077E  120A  118A  2F81   ljmp _main	;jump to C main() function
+    72                           psect	cstackCOMMON,class=COMMON,space=1
+    73                           global __pcstackCOMMON
+    74  0070                     __pcstackCOMMON:
+    75                           	global	?_main
+    76  0070                     ?_main:	; 0 bytes @ 0x0
+    77                           	global	??_main
+    78  0070                     ??_main:	; 0 bytes @ 0x0
+    79  0070                     	ds	3
+    80                           	global	main@x
+    81  0073                     main@x:	; 2 bytes @ 0x3
+    82  0073                     	ds	2
+    83 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+    84 ;;Auto spaces:   Size  Autos    Used
+    85 ;; COMMON          14      5       5
+    86 ;; BANK0           80      0       0
+    87 ;; BANK1           80      0       0
+    88 ;; BANK3           96      0       0
+    89 ;; BANK2           96      0       0
+    90                           
+    91 ;;
+    92 ;; Pointer list with targets:
+    93                           
+    94                           
+    95                           
+    96 ;;
+    97 ;; Critical Paths under _main in COMMON
+    98 ;;
+    99 ;;   None.
+   100 ;;
+   101 ;; Critical Paths under _main in BANK0
+   102 ;;
+   103 ;;   None.
+   104 ;;
+   105 ;; Critical Paths under _main in BANK1
+   106 ;;
+   107 ;;   None.
+   108 ;;
+   109 ;; Critical Paths under _main in BANK3
+   110 ;;
+   111 ;;   None.
+   112 ;;
+   113 ;; Critical Paths under _main in BANK2
+   114 ;;
+   115 ;;   None.
+   116                           
+   117 ;;
+   118 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   119 ;;
+   120                           
+   121 ;;
+   122 ;;Call Graph Tables:
+   123 ;;
+   124 ;; ---------------------------------------------------------------------------------
+   125 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   126 ;; ---------------------------------------------------------------------------------
+   127 ;; (0) _main                                                 7     7      0      15
+   128 ;;                                              0 COMMON     5     5      0
+   129 ;; ---------------------------------------------------------------------------------
+   130 ;; Estimated maximum stack depth 0
+   131 ;; ---------------------------------------------------------------------------------
+   132                           
+   133 ;; Call Graph Graphs:
+   134                           
+   135 ;; _main (ROOT)
+   136 ;;
+   137                           
+   138 ;; Address spaces:
+   139                           
+   140 ;;Name               Size   Autos  Total    Cost      Usage
+   141 ;;BITCOMMON            E      0       0       0        0.0%
+   142 ;;EEDATA             100      0       0       0        0.0%
+   143 ;;NULL                 0      0       0       0        0.0%
+   144 ;;CODE                 0      0       0       0        0.0%
+   145 ;;COMMON               E      5       5       1       35.7%
+   146 ;;BITSFR0              0      0       0       1        0.0%
+   147 ;;SFR0                 0      0       0       1        0.0%
+   148 ;;BITSFR1              0      0       0       2        0.0%
+   149 ;;SFR1                 0      0       0       2        0.0%
+   150 ;;STACK                0      0       0       2        0.0%
+   151 ;;ABS                  0      0       0       3        0.0%
+   152 ;;BITBANK0            50      0       0       4        0.0%
+   153 ;;BITSFR3              0      0       0       4        0.0%
+   154 ;;SFR3                 0      0       0       4        0.0%
+   155 ;;BANK0               50      0       0       5        0.0%
+   156 ;;BITSFR2              0      0       0       5        0.0%
+   157 ;;SFR2                 0      0       0       5        0.0%
+   158 ;;BITBANK1            50      0       0       6        0.0%
+   159 ;;BANK1               50      0       0       7        0.0%
+   160 ;;BITBANK3            60      0       0       8        0.0%
+   161 ;;BANK3               60      0       0       9        0.0%
+   162 ;;BITBANK2            60      0       0      10        0.0%
+   163 ;;BANK2               60      0       0      11        0.0%
+   164 ;;DATA                 0      0       0      12        0.0%
+   165                           
+   166                           	global	_main
+   167                           psect	maintext
+   168                           
+   169 ;; *************** function _main *****************
+   170 ;; Defined at:
+   171 ;;		line 7 in file "C:\Users\Lenovo\Desktop\PIC\TASK\25. WATER_TANK\WATER_TANK.C"
+   172 ;; Parameters:    Size  Location     Type
+   173 ;;		None
+   174 ;; Auto vars:     Size  Location     Type
+   175 ;;  x               2    3[COMMON] int 
+   176 ;;  i               2    0        int 
+   177 ;; Return value:  Size  Location     Type
+   178 ;;		None               void
+   179 ;; Registers used:
+   180 ;;		wreg, status,2, status,0
+   181 ;; Tracked objects:
+   182 ;;		On entry : 17F/0
+   183 ;;		On exit  : 0/0
+   184 ;;		Unchanged: 0/0
+   185 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   186 ;;      Params:         0       0       0       0       0
+   187 ;;      Locals:         2       0       0       0       0
+   188 ;;      Temps:          3       0       0       0       0
+   189 ;;      Totals:         5       0       0       0       0
+   190 ;;Total ram usage:        5 bytes
+   191 ;; This function calls:
+   192 ;;		Nothing
+   193 ;; This function is called by:
+   194 ;;		Startup code after reset
+   195 ;; This function uses a non-reentrant model
+   196 ;;
+   197                           psect	maintext
+   198                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\25. WATER_TANK\WATER_TANK.C"
+   199                           	line	7
+   200                           	global	__size_of_main
+   201  007F                     	__size_of_main	equ	__end_of_main-_main
+   202                           	
+   203  0781                     _main:	
+   204                           	opt	stack 8
+   205                           ; Regs used in _main: [wreg+status,2+status,0]
+   206                           	line	8
+   207                           	
+   208  0781                     l1724:	
+   209                           ;WATER_TANK.C: 8: TRISB=0x03;
+   210  0781  3003               	movlw	(03h)
+   211  0782  1683               	bsf	status, 5	;RP0=1, select bank1
+   212  0783  1303               	bcf	status, 6	;RP1=0, select bank1
+   213  0784  0086               	movwf	(134)^080h	;volatile
+   214                           	line	9
+   215                           	
+   216  0785                     l1726:	
+   217                           ;WATER_TANK.C: 9: PORTB=0x00;
+   218  0785  1283               	bcf	status, 5	;RP0=0, select bank0
+   219  0786  1303               	bcf	status, 6	;RP1=0, select bank0
+   220  0787  0186               	clrf	(6)	;volatile
+   221                           	line	11
+   222                           	
+   223  0788                     l1728:	
+   224                           ;WATER_TANK.C: 10: int i,x;
+   225                           ;WATER_TANK.C: 11: if(RB0==0 && RB1==0)
+   226  0788  1806               	btfsc	(48/8),(48)&7
+   227  0789  2F8B               	goto	u2141
+   228  078A  2F8C               	goto	u2140
+   229  078B                     u2141:
+   230  078B  2FA3               	goto	l561
+   231  078C                     u2140:
+   232                           	
+   233  078C                     l1730:	
+   234  078C  1886               	btfsc	(49/8),(49)&7
+   235  078D  2F8F               	goto	u2151
+   236  078E  2F90               	goto	u2150
+   237  078F                     u2151:
+   238  078F  2FA3               	goto	l561
+   239  0790                     u2150:
+   240                           	line	13
+   241                           	
+   242  0790                     l1732:	
+   243                           ;WATER_TANK.C: 12: {
+   244                           ;WATER_TANK.C: 13: PORTB=0X0C;
+   245  0790  300C               	movlw	(0Ch)
+   246  0791  0086               	movwf	(6)	;volatile
+   247                           	line	14
+   248                           ;WATER_TANK.C: 14: _delay((unsigned long)((500)*(4000000/4000.0)));
+   249                           	opt asmopt_off
+   250  0792  3003               movlw  3
+   251  0793  00F2               movwf	((??_main+0)+0+2),f
+   252  0794  3088               movlw	136
+   253  0795  00F1               movwf	((??_main+0)+0+1),f
+   254  0796  3056               	movlw	86
+   255  0797  00F0               movwf	((??_main+0)+0),f
+   256  0798                     u2217:
+   257  0798  0BF0               	decfsz	((??_main+0)+0),f
+   258  0799  2F98               	goto	u2217
+   259  079A  0BF1               	decfsz	((??_main+0)+0+1),f
+   260  079B  2F98               	goto	u2217
+   261  079C  0BF2               	decfsz	((??_main+0)+0+2),f
+   262  079D  2F98               	goto	u2217
+   263                           opt asmopt_on
+   264                           
+   265                           	line	15
+   266                           ;WATER_TANK.C: 15: x=0;
+   267  079E  3000               	movlw	low(0)
+   268  079F  00F3               	movwf	(main@x)
+   269  07A0  3000               	movlw	high(0)
+   270  07A1  00F4               	movwf	((main@x))+1
+   271                           	line	16
+   272                           ;WATER_TANK.C: 16: }
+   273  07A2  2FFD               	goto	l562
+   274                           	line	17
+   275                           	
+   276  07A3                     l561:	
+   277                           ;WATER_TANK.C: 17: else if(RB0==1 && RB1==0)
+   278  07A3  1283               	bcf	status, 5	;RP0=0, select bank0
+   279  07A4  1303               	bcf	status, 6	;RP1=0, select bank0
+   280  07A5  1C06               	btfss	(48/8),(48)&7
+   281  07A6  2FA8               	goto	u2161
+   282  07A7  2FA9               	goto	u2160
+   283  07A8                     u2161:
+   284  07A8  2FD2               	goto	l563
+   285  07A9                     u2160:
+   286                           	
+   287  07A9                     l1734:	
+   288  07A9  1886               	btfsc	(49/8),(49)&7
+   289  07AA  2FAC               	goto	u2171
+   290  07AB  2FAD               	goto	u2170
+   291  07AC                     u2171:
+   292  07AC  2FD2               	goto	l563
+   293  07AD                     u2170:
+   294                           	line	18
+   295                           	
+   296  07AD                     l1736:	
+   297                           ;WATER_TANK.C: 18: { if(x==0){
+   298  07AD  0874               	movf	((main@x+1)),w
+   299  07AE  0473               	iorwf	((main@x)),w
+   300  07AF  1D03               	skipz
+   301  07B0  2FB2               	goto	u2181
+   302  07B1  2FB3               	goto	u2180
+   303  07B2                     u2181:
+   304  07B2  2FC2               	goto	l564
+   305  07B3                     u2180:
+   306                           	line	19
+   307                           	
+   308  07B3                     l1738:	
+   309                           ;WATER_TANK.C: 19: PORTB=0X0C;
+   310  07B3  300C               	movlw	(0Ch)
+   311  07B4  0086               	movwf	(6)	;volatile
+   312                           	line	20
+   313                           ;WATER_TANK.C: 20: _delay((unsigned long)((500)*(4000000/4000.0)));
+   314                           	opt asmopt_off
+   315  07B5  3003               movlw  3
+   316  07B6  00F2               movwf	((??_main+0)+0+2),f
+   317  07B7  3088               movlw	136
+   318  07B8  00F1               movwf	((??_main+0)+0+1),f
+   319  07B9  3056               	movlw	86
+   320  07BA  00F0               movwf	((??_main+0)+0),f
+   321  07BB                     u2227:
+   322  07BB  0BF0               	decfsz	((??_main+0)+0),f
+   323  07BC  2FBB               	goto	u2227
+   324  07BD  0BF1               	decfsz	((??_main+0)+0+1),f
+   325  07BE  2FBB               	goto	u2227
+   326  07BF  0BF2               	decfsz	((??_main+0)+0+2),f
+   327  07C0  2FBB               	goto	u2227
+   328                           opt asmopt_on
+   329                           
+   330                           	line	21
+   331                           ;WATER_TANK.C: 21: }
+   332  07C1  2FD1               	goto	l565
+   333                           	line	22
+   334                           	
+   335  07C2                     l564:	
+   336                           	line	24
+   337                           	
+   338  07C2                     l1740:	
+   339                           ;WATER_TANK.C: 22: else
+   340                           ;WATER_TANK.C: 23: {
+   341                           ;WATER_TANK.C: 24: PORTB=0X00;
+   342  07C2  1283               	bcf	status, 5	;RP0=0, select bank0
+   343  07C3  1303               	bcf	status, 6	;RP1=0, select bank0
+   344  07C4  0186               	clrf	(6)	;volatile
+   345                           	line	25
+   346                           	
+   347  07C5                     l1742:	
+   348                           ;WATER_TANK.C: 25: _delay((unsigned long)((500)*(4000000/4000.0)));
+   349                           	opt asmopt_off
+   350  07C5  3003               movlw  3
+   351  07C6  00F2               movwf	((??_main+0)+0+2),f
+   352  07C7  3088               movlw	136
+   353  07C8  00F1               movwf	((??_main+0)+0+1),f
+   354  07C9  3056               	movlw	86
+   355  07CA  00F0               movwf	((??_main+0)+0),f
+   356  07CB                     u2237:
+   357  07CB  0BF0               	decfsz	((??_main+0)+0),f
+   358  07CC  2FCB               	goto	u2237
+   359  07CD  0BF1               	decfsz	((??_main+0)+0+1),f
+   360  07CE  2FCB               	goto	u2237
+   361  07CF  0BF2               	decfsz	((??_main+0)+0+2),f
+   362  07D0  2FCB               	goto	u2237
+   363                           opt asmopt_on
+   364                           
+   365                           	line	26
+   366                           	
+   367  07D1                     l565:	
+   368                           	line	27
+   369                           ;WATER_TANK.C: 26: }
+   370                           ;WATER_TANK.C: 27: }
+   371  07D1  2FFD               	goto	l566
+   372                           	line	28
+   373                           	
+   374  07D2                     l563:	
+   375                           ;WATER_TANK.C: 28: else if(RB1==1 && RB0==1)
+   376  07D2  1283               	bcf	status, 5	;RP0=0, select bank0
+   377  07D3  1303               	bcf	status, 6	;RP1=0, select bank0
+   378  07D4  1C86               	btfss	(49/8),(49)&7
+   379  07D5  2FD7               	goto	u2191
+   380  07D6  2FD8               	goto	u2190
+   381  07D7                     u2191:
+   382  07D7  2FEE               	goto	l567
+   383  07D8                     u2190:
+   384                           	
+   385  07D8                     l1744:	
+   386  07D8  1C06               	btfss	(48/8),(48)&7
+   387  07D9  2FDB               	goto	u2201
+   388  07DA  2FDC               	goto	u2200
+   389  07DB                     u2201:
+   390  07DB  2FEE               	goto	l567
+   391  07DC                     u2200:
+   392                           	line	29
+   393                           	
+   394  07DC                     l1746:	
+   395                           ;WATER_TANK.C: 29: { PORTB=0X00;
+   396  07DC  0186               	clrf	(6)	;volatile
+   397                           	line	30
+   398                           	
+   399  07DD                     l1748:	
+   400                           ;WATER_TANK.C: 30: _delay((unsigned long)((500)*(4000000/4000.0)));
+   401                           	opt asmopt_off
+   402  07DD  3003               movlw  3
+   403  07DE  00F2               movwf	((??_main+0)+0+2),f
+   404  07DF  3088               movlw	136
+   405  07E0  00F1               movwf	((??_main+0)+0+1),f
+   406  07E1  3056               	movlw	86
+   407  07E2  00F0               movwf	((??_main+0)+0),f
+   408  07E3                     u2247:
+   409  07E3  0BF0               	decfsz	((??_main+0)+0),f
+   410  07E4  2FE3               	goto	u2247
+   411  07E5  0BF1               	decfsz	((??_main+0)+0+1),f
+   412  07E6  2FE3               	goto	u2247
+   413  07E7  0BF2               	decfsz	((??_main+0)+0+2),f
+   414  07E8  2FE3               	goto	u2247
+   415                           opt asmopt_on
+   416                           
+   417                           	line	31
+   418                           	
+   419  07E9                     l1750:	
+   420                           ;WATER_TANK.C: 31: x=1;
+   421  07E9  3001               	movlw	low(01h)
+   422  07EA  00F3               	movwf	(main@x)
+   423  07EB  3000               	movlw	high(01h)
+   424  07EC  00F4               	movwf	((main@x))+1
+   425                           	line	32
+   426                           ;WATER_TANK.C: 32: }
+   427  07ED  2FFD               	goto	l568
+   428                           	line	33
+   429                           	
+   430  07EE                     l567:	
+   431                           	line	34
+   432                           	
+   433  07EE                     l1752:	
+   434                           ;WATER_TANK.C: 33: else
+   435                           ;WATER_TANK.C: 34: { PORTB=0X00;
+   436  07EE  1283               	bcf	status, 5	;RP0=0, select bank0
+   437  07EF  1303               	bcf	status, 6	;RP1=0, select bank0
+   438  07F0  0186               	clrf	(6)	;volatile
+   439                           	line	35
+   440                           	
+   441  07F1                     l1754:	
+   442                           ;WATER_TANK.C: 35: _delay((unsigned long)((500)*(4000000/4000.0)));
+   443                           	opt asmopt_off
+   444  07F1  3003               movlw  3
+   445  07F2  00F2               movwf	((??_main+0)+0+2),f
+   446  07F3  3088               movlw	136
+   447  07F4  00F1               movwf	((??_main+0)+0+1),f
+   448  07F5  3056               	movlw	86
+   449  07F6  00F0               movwf	((??_main+0)+0),f
+   450  07F7                     u2257:
+   451  07F7  0BF0               	decfsz	((??_main+0)+0),f
+   452  07F8  2FF7               	goto	u2257
+   453  07F9  0BF1               	decfsz	((??_main+0)+0+1),f
+   454  07FA  2FF7               	goto	u2257
+   455  07FB  0BF2               	decfsz	((??_main+0)+0+2),f
+   456  07FC  2FF7               	goto	u2257
+   457                           opt asmopt_on
+   458                           
+   459                           	line	36
+   460                           	
+   461  07FD                     l568:	
+   462                           	
+   463  07FD                     l566:	
+   464                           	
+   465  07FD                     l562:	
+   466                           	line	37
+   467                           	
+   468  07FD                     l569:	
+   469                           	global	start
+   470  07FD  120A  118A  2800   	ljmp	start
+   471                           	opt stack 0
+   472                           GLOBAL	__end_of_main
+   473  0800                     	__end_of_main:
+   474 ;; =============== function _main ends ============
+   475                           
+   476                           	signat	_main,88
+   477                           psect	maintext
+   478                           	global	btemp
+   479  007E                     	btemp set 07Eh
+   480                           
+   481                           	DABS	1,126,2	;btemp
+   482                           	global	wtemp0
+   483  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.71a build 6446 
+Symbol Table                                                                                   Sun Oct 29 11:53:00 2023
+
+                 l561 07A3                   l562 07FD                   l563 07D2                   l564 07C2  
+                 l565 07D1                   l566 07FD                   l567 07EE                   l568 07FD  
+                 l569 07FD                   _RB0 0030                   _RB1 0031                  l1730 078C  
+                l1740 07C2                  l1732 0790                  l1724 0781                  l1750 07E9  
+                l1742 07C5                  l1734 07A9                  l1726 0785                  l1752 07EE  
+                l1744 07D8                  l1736 07AD                  l1728 0788                  l1754 07F1  
+                l1746 07DC                  l1738 07B3                  l1748 07DD                  u2200 07DC  
+                u2201 07DB                  u2140 078C                  u2141 078B                  u2150 0790  
+                u2151 078F                  u2160 07A9                  u2161 07A8                  u2217 0798  
+                u2170 07AD                  u2227 07BB                  u2171 07AC                  u2180 07B3  
+                u2237 07CB                  u2181 07B2                  u2190 07D8                  u2247 07E3  
+                u2191 07D7                  u2257 07F7                  _main 0781                  btemp 007E  
+                start 0000                 ?_main 0070                 _PORTB 0006                 _TRISB 0086  
+               main@x 0073                 status 0003                 wtemp0 007E          __end_of_main 0800  
+              ??_main 0070        __pcstackCOMMON 0070            __pmaintext 0781  end_of_initialization 077D  
+ start_initialization 077D         __size_of_main 007F  
