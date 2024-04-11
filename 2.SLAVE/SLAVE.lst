@@ -1,0 +1,520 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.71a build 6446 
+                                                                                               Sun Jan 07 10:29:01 2024
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6446
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6446"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_slave_initial
+    43                           	FNCALL	_main,_slave_receive
+    44                           	FNROOT	_main
+    45                           	global	_PORTB
+    46                           psect	text72,local,class=CODE,delta=2
+    47                           global __ptext72
+    48  0000                     __ptext72:
+    49  0006                     _PORTB	set	6
+    50                           	global	_SSPBUF
+    51  0013                     _SSPBUF	set	19
+    52                           	global	_CKP
+    53  00A4                     _CKP	set	164
+    54                           	global	_RB6
+    55  0036                     _RB6	set	54
+    56                           	global	_SSPEN
+    57  00A5                     _SSPEN	set	165
+    58                           	global	_SSPIF
+    59  0063                     _SSPIF	set	99
+    60                           	global	_SSPM0
+    61  00A0                     _SSPM0	set	160
+    62                           	global	_SSPM1
+    63  00A1                     _SSPM1	set	161
+    64                           	global	_SSPM2
+    65  00A2                     _SSPM2	set	162
+    66                           	global	_SSPM3
+    67  00A3                     _SSPM3	set	163
+    68                           	global	_TRISB
+    69  0086                     _TRISB	set	134
+    70                           	global	_TRISC
+    71  0087                     _TRISC	set	135
+    72                           	global	_CKE
+    73  04A6                     _CKE	set	1190
+    74                           	global	_SMP
+    75  04A7                     _SMP	set	1191
+    76                           	file	"SLAVE.as"
+    77                           	line	#
+    78                           psect cinit,class=CODE,delta=2
+    79                           global start_initialization
+    80  07BC                     start_initialization:
+    81                           
+    82                           psect cinit,class=CODE,delta=2
+    83                           global end_of_initialization
+    84                           
+    85                           ;End of C runtime variable initialization code
+    86                           
+    87  07BC                     end_of_initialization:
+    88  07BC  0183               clrf status
+    89  07BD  120A  118A  2FCD   ljmp _main	;jump to C main() function
+    90                           psect	cstackCOMMON,class=COMMON,space=1
+    91                           global __pcstackCOMMON
+    92  0070                     __pcstackCOMMON:
+    93                           	global	?_slave_initial
+    94  0070                     ?_slave_initial:	; 0 bytes @ 0x0
+    95                           	global	??_slave_initial
+    96  0070                     ??_slave_initial:	; 0 bytes @ 0x0
+    97                           	global	?_slave_receive
+    98  0070                     ?_slave_receive:	; 0 bytes @ 0x0
+    99                           	global	??_slave_receive
+   100  0070                     ??_slave_receive:	; 0 bytes @ 0x0
+   101                           	global	?_main
+   102  0070                     ?_main:	; 0 bytes @ 0x0
+   103  0070                     	ds	1
+   104                           	global	slave_receive@x
+   105  0071                     slave_receive@x:	; 1 bytes @ 0x1
+   106  0071                     	ds	1
+   107                           	global	??_main
+   108  0072                     ??_main:	; 0 bytes @ 0x2
+   109 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   110 ;;Auto spaces:   Size  Autos    Used
+   111 ;; COMMON          14      2       2
+   112 ;; BANK0           80      0       0
+   113 ;; BANK1           80      0       0
+   114 ;; BANK3           96      0       0
+   115 ;; BANK2           96      0       0
+   116                           
+   117 ;;
+   118 ;; Pointer list with targets:
+   119                           
+   120                           
+   121                           
+   122 ;;
+   123 ;; Critical Paths under _main in COMMON
+   124 ;;
+   125 ;;   _main->_slave_receive
+   126 ;;
+   127 ;; Critical Paths under _main in BANK0
+   128 ;;
+   129 ;;   None.
+   130 ;;
+   131 ;; Critical Paths under _main in BANK1
+   132 ;;
+   133 ;;   None.
+   134 ;;
+   135 ;; Critical Paths under _main in BANK3
+   136 ;;
+   137 ;;   None.
+   138 ;;
+   139 ;; Critical Paths under _main in BANK2
+   140 ;;
+   141 ;;   None.
+   142                           
+   143 ;;
+   144 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   145 ;;
+   146                           
+   147 ;;
+   148 ;;Call Graph Tables:
+   149 ;;
+   150 ;; ---------------------------------------------------------------------------------
+   151 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   152 ;; ---------------------------------------------------------------------------------
+   153 ;; (0) _main                                                 0     0      0      30
+   154 ;;                      _slave_initial
+   155 ;;                      _slave_receive
+   156 ;; ---------------------------------------------------------------------------------
+   157 ;; (1) _slave_receive                                        2     2      0      30
+   158 ;;                                              0 COMMON     2     2      0
+   159 ;; ---------------------------------------------------------------------------------
+   160 ;; (1) _slave_initial                                        0     0      0       0
+   161 ;; ---------------------------------------------------------------------------------
+   162 ;; Estimated maximum stack depth 1
+   163 ;; ---------------------------------------------------------------------------------
+   164                           
+   165 ;; Call Graph Graphs:
+   166                           
+   167 ;; _main (ROOT)
+   168 ;;   _slave_initial
+   169 ;;   _slave_receive
+   170 ;;
+   171                           
+   172 ;; Address spaces:
+   173                           
+   174 ;;Name               Size   Autos  Total    Cost      Usage
+   175 ;;BITCOMMON            E      0       0       0        0.0%
+   176 ;;EEDATA             100      0       0       0        0.0%
+   177 ;;NULL                 0      0       0       0        0.0%
+   178 ;;CODE                 0      0       0       0        0.0%
+   179 ;;COMMON               E      2       2       1       14.3%
+   180 ;;BITSFR0              0      0       0       1        0.0%
+   181 ;;SFR0                 0      0       0       1        0.0%
+   182 ;;BITSFR1              0      0       0       2        0.0%
+   183 ;;SFR1                 0      0       0       2        0.0%
+   184 ;;STACK                0      0       1       2        0.0%
+   185 ;;ABS                  0      0       0       3        0.0%
+   186 ;;BITBANK0            50      0       0       4        0.0%
+   187 ;;BITSFR3              0      0       0       4        0.0%
+   188 ;;SFR3                 0      0       0       4        0.0%
+   189 ;;BANK0               50      0       0       5        0.0%
+   190 ;;BITSFR2              0      0       0       5        0.0%
+   191 ;;SFR2                 0      0       0       5        0.0%
+   192 ;;BITBANK1            50      0       0       6        0.0%
+   193 ;;BANK1               50      0       0       7        0.0%
+   194 ;;BITBANK3            60      0       0       8        0.0%
+   195 ;;BANK3               60      0       0       9        0.0%
+   196 ;;BITBANK2            60      0       0      10        0.0%
+   197 ;;BANK2               60      0       0      11        0.0%
+   198 ;;DATA                 0      0       0      12        0.0%
+   199                           
+   200                           	global	_main
+   201                           psect	maintext,global,class=CODE,delta=2
+   202                           global __pmaintext
+   203  07CD                     __pmaintext:
+   204                           
+   205 ;; *************** function _main *****************
+   206 ;; Defined at:
+   207 ;;		line 19 in file "C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\2.SLAVE\SLAVE.c"
+   208 ;; Parameters:    Size  Location     Type
+   209 ;;		None
+   210 ;; Auto vars:     Size  Location     Type
+   211 ;;		None
+   212 ;; Return value:  Size  Location     Type
+   213 ;;		None               void
+   214 ;; Registers used:
+   215 ;;		wreg, status,2, status,0, pclath, cstack
+   216 ;; Tracked objects:
+   217 ;;		On entry : 17F/0
+   218 ;;		On exit  : 0/0
+   219 ;;		Unchanged: 0/0
+   220 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   221 ;;      Params:         0       0       0       0       0
+   222 ;;      Locals:         0       0       0       0       0
+   223 ;;      Temps:          0       0       0       0       0
+   224 ;;      Totals:         0       0       0       0       0
+   225 ;;Total ram usage:        0 bytes
+   226 ;; Hardware stack levels required when called:    1
+   227 ;; This function calls:
+   228 ;;		_slave_initial
+   229 ;;		_slave_receive
+   230 ;; This function is called by:
+   231 ;;		Startup code after reset
+   232 ;; This function uses a non-reentrant model
+   233 ;;
+   234                           psect	maintext
+   235                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\2.SLAVE\SLAVE.c"
+   236                           	line	19
+   237                           	global	__size_of_main
+   238  0018                     	__size_of_main	equ	__end_of_main-_main
+   239                           	
+   240  07CD                     _main:	
+   241                           	opt	stack 8
+   242                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   243                           	line	20
+   244                           	
+   245  07CD                     l1741:	
+   246                           ;SLAVE.c: 20: TRISB=0X00;PORTB=0X00;
+   247  07CD  1683               	bsf	status, 5	;RP0=1, select bank1
+   248  07CE  1303               	bcf	status, 6	;RP1=0, select bank1
+   249  07CF  0186               	clrf	(134)^080h	;volatile
+   250  07D0  1283               	bcf	status, 5	;RP0=0, select bank0
+   251  07D1  1303               	bcf	status, 6	;RP1=0, select bank0
+   252  07D2  0186               	clrf	(6)	;volatile
+   253                           	line	21
+   254                           	
+   255  07D3                     l1743:	
+   256                           ;SLAVE.c: 21: TRISC=0X38;
+   257  07D3  3038               	movlw	(038h)
+   258  07D4  1683               	bsf	status, 5	;RP0=1, select bank1
+   259  07D5  1303               	bcf	status, 6	;RP1=0, select bank1
+   260  07D6  0087               	movwf	(135)^080h	;volatile
+   261                           	line	22
+   262                           	
+   263  07D7                     l1745:	
+   264                           ;SLAVE.c: 22: slave_initial();
+   265  07D7  120A  118A  27C0   	fcall	_slave_initial
+              120A  118A         
+   266                           	line	23
+   267                           ;SLAVE.c: 23: while(1){
+   268                           	
+   269  07DC                     l571:	
+   270                           	line	24
+   271                           	
+   272  07DC                     l1747:	
+   273                           ;SLAVE.c: 24: slave_receive();
+   274  07DC  120A  118A  27E5   	fcall	_slave_receive
+              120A  118A         
+   275                           	line	25
+   276                           	
+   277  07E1                     l572:	
+   278                           	line	23
+   279  07E1  2FDC               	goto	l571
+   280                           	
+   281  07E2                     l573:	
+   282                           	line	26
+   283                           	
+   284  07E2                     l574:	
+   285                           	global	start
+   286  07E2  120A  118A  2800   	ljmp	start
+   287                           	opt stack 0
+   288                           GLOBAL	__end_of_main
+   289  07E5                     	__end_of_main:
+   290 ;; =============== function _main ends ============
+   291                           
+   292                           	signat	_main,88
+   293                           	global	_slave_receive
+   294                           psect	text73,local,class=CODE,delta=2
+   295                           global __ptext73
+   296  07E5                     __ptext73:
+   297                           
+   298 ;; *************** function _slave_receive *****************
+   299 ;; Defined at:
+   300 ;;		line 12 in file "C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\2.SLAVE\SLAVE.c"
+   301 ;; Parameters:    Size  Location     Type
+   302 ;;		None
+   303 ;; Auto vars:     Size  Location     Type
+   304 ;;  x               1    1[COMMON] unsigned char 
+   305 ;; Return value:  Size  Location     Type
+   306 ;;		None               void
+   307 ;; Registers used:
+   308 ;;		wreg
+   309 ;; Tracked objects:
+   310 ;;		On entry : 0/0
+   311 ;;		On exit  : 0/0
+   312 ;;		Unchanged: 0/0
+   313 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   314 ;;      Params:         0       0       0       0       0
+   315 ;;      Locals:         1       0       0       0       0
+   316 ;;      Temps:          1       0       0       0       0
+   317 ;;      Totals:         2       0       0       0       0
+   318 ;;Total ram usage:        2 bytes
+   319 ;; Hardware stack levels used:    1
+   320 ;; This function calls:
+   321 ;;		Nothing
+   322 ;; This function is called by:
+   323 ;;		_main
+   324 ;; This function uses a non-reentrant model
+   325 ;;
+   326                           psect	text73
+   327                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\2.SLAVE\SLAVE.c"
+   328                           	line	12
+   329                           	global	__size_of_slave_receive
+   330  001B                     	__size_of_slave_receive	equ	__end_of_slave_receive-_slave_receive
+   331                           	
+   332  07E5                     _slave_receive:	
+   333                           	opt	stack 7
+   334                           ; Regs used in _slave_receive: [wreg]
+   335                           	line	13
+   336                           	
+   337  07E5                     l945:	
+   338                           ;SLAVE.c: 13: char x=SSPBUF;
+   339  07E5  1283               	bcf	status, 5	;RP0=0, select bank0
+   340  07E6  1303               	bcf	status, 6	;RP1=0, select bank0
+   341  07E7  0813               	movf	(19),w	;volatile
+   342  07E8  00F0               	movwf	(??_slave_receive+0)+0
+   343  07E9  0870               	movf	(??_slave_receive+0)+0,w
+   344  07EA  00F1               	movwf	(slave_receive@x)
+   345                           	line	14
+   346                           ;SLAVE.c: 14: while(SSPIF==0);
+   347  07EB  2FEC               	goto	l562
+   348                           	
+   349  07EC                     l563:	
+   350                           	
+   351  07EC                     l562:	
+   352  07EC  1D8C               	btfss	(99/8),(99)&7
+   353  07ED  2FEF               	goto	u11
+   354  07EE  2FF0               	goto	u10
+   355  07EF                     u11:
+   356  07EF  2FEC               	goto	l563
+   357  07F0                     u10:
+   358                           	
+   359  07F0                     l564:	
+   360                           	line	15
+   361                           	
+   362  07F0                     l947:	
+   363                           ;SLAVE.c: 15: if(x=='a'){RB6=1;}
+   364  07F0  0871               	movf	(slave_receive@x),w
+   365  07F1  3A61               	xorlw	061h
+   366  07F2  1D03               	skipz
+   367  07F3  2FF5               	goto	u21
+   368  07F4  2FF6               	goto	u20
+   369  07F5                     u21:
+   370  07F5  2FF8               	goto	l565
+   371  07F6                     u20:
+   372                           	
+   373  07F6                     l949:	
+   374  07F6  1706               	bsf	(54/8),(54)&7
+   375  07F7  2FFF               	goto	l566
+   376                           	line	16
+   377                           	
+   378  07F8                     l565:	
+   379                           	
+   380  07F8                     l951:	
+   381                           ;SLAVE.c: 16: else if(x=='b'){RB6=0;}
+   382  07F8  0871               	movf	(slave_receive@x),w
+   383  07F9  3A62               	xorlw	062h
+   384  07FA  1D03               	skipz
+   385  07FB  2FFD               	goto	u31
+   386  07FC  2FFE               	goto	u30
+   387  07FD                     u31:
+   388  07FD  2FFF               	goto	l567
+   389  07FE                     u30:
+   390                           	
+   391  07FE                     l953:	
+   392  07FE  1306               	bcf	(54/8),(54)&7
+   393                           	
+   394  07FF                     l567:	
+   395                           	line	17
+   396                           	
+   397  07FF                     l566:	
+   398                           	
+   399  07FF                     l568:	
+   400  07FF  0008               	return
+   401                           	opt stack 0
+   402                           GLOBAL	__end_of_slave_receive
+   403  0800                     	__end_of_slave_receive:
+   404 ;; =============== function _slave_receive ends ============
+   405                           
+   406                           	signat	_slave_receive,88
+   407                           	global	_slave_initial
+   408                           psect	text74,local,class=CODE,delta=2
+   409                           global __ptext74
+   410  07C0                     __ptext74:
+   411                           
+   412 ;; *************** function _slave_initial *****************
+   413 ;; Defined at:
+   414 ;;		line 5 in file "C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\2.SLAVE\SLAVE.c"
+   415 ;; Parameters:    Size  Location     Type
+   416 ;;		None
+   417 ;; Auto vars:     Size  Location     Type
+   418 ;;		None
+   419 ;; Return value:  Size  Location     Type
+   420 ;;		None               void
+   421 ;; Registers used:
+   422 ;;		None
+   423 ;; Tracked objects:
+   424 ;;		On entry : 0/0
+   425 ;;		On exit  : 0/0
+   426 ;;		Unchanged: 0/0
+   427 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   428 ;;      Params:         0       0       0       0       0
+   429 ;;      Locals:         0       0       0       0       0
+   430 ;;      Temps:          0       0       0       0       0
+   431 ;;      Totals:         0       0       0       0       0
+   432 ;;Total ram usage:        0 bytes
+   433 ;; Hardware stack levels used:    1
+   434 ;; This function calls:
+   435 ;;		Nothing
+   436 ;; This function is called by:
+   437 ;;		_main
+   438 ;; This function uses a non-reentrant model
+   439 ;;
+   440                           psect	text74
+   441                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\12.SPI_TASKS\2.SLAVE\SLAVE.c"
+   442                           	line	5
+   443                           	global	__size_of_slave_initial
+   444  000D                     	__size_of_slave_initial	equ	__end_of_slave_initial-_slave_initial
+   445                           	
+   446  07C0                     _slave_initial:	
+   447                           	opt	stack 7
+   448                           ; Regs used in _slave_initial: []
+   449                           	line	6
+   450                           	
+   451  07C0                     l943:	
+   452                           ;SLAVE.c: 6: SMP=0;CKE=0;CKP=0;
+   453  07C0  1683               	bsf	status, 5	;RP0=1, select bank1
+   454  07C1  1303               	bcf	status, 6	;RP1=0, select bank1
+   455  07C2  1394               	bcf	(1191/8)^080h,(1191)&7
+   456  07C3  1314               	bcf	(1190/8)^080h,(1190)&7
+   457  07C4  1283               	bcf	status, 5	;RP0=0, select bank0
+   458  07C5  1303               	bcf	status, 6	;RP1=0, select bank0
+   459  07C6  1214               	bcf	(164/8),(164)&7
+   460                           	line	7
+   461                           ;SLAVE.c: 7: SSPM3=0;SSPM1=0;
+   462  07C7  1194               	bcf	(163/8),(163)&7
+   463  07C8  1094               	bcf	(161/8),(161)&7
+   464                           	line	8
+   465                           ;SLAVE.c: 8: SSPM2=1;SSPM0=1;
+   466  07C9  1514               	bsf	(162/8),(162)&7
+   467  07CA  1414               	bsf	(160/8),(160)&7
+   468                           	line	9
+   469                           ;SLAVE.c: 9: SSPEN=1;
+   470  07CB  1694               	bsf	(165/8),(165)&7
+   471                           	line	10
+   472                           	
+   473  07CC                     l559:	
+   474  07CC  0008               	return
+   475                           	opt stack 0
+   476                           GLOBAL	__end_of_slave_initial
+   477  07CD                     	__end_of_slave_initial:
+   478 ;; =============== function _slave_initial ends ============
+   479                           
+   480                           	signat	_slave_initial,88
+   481                           psect	text75,local,class=CODE,delta=2
+   482                           global __ptext75
+   483  0000                     __ptext75:
+   484                           	global	btemp
+   485  007E                     	btemp set 07Eh
+   486                           
+   487                           	DABS	1,126,2	;btemp
+   488                           	global	wtemp0
+   489  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.71a build 6446 
+Symbol Table                                                                                   Sun Jan 07 10:29:01 2024
+
+                    u10 07F0                      u11 07EF                      u20 07F6                      u21 07F5  
+                    u30 07FE                      u31 07FD                     l562 07EC                     l563 07EC  
+                   l571 07DC                     l564 07F0                     l572 07E1                     l565 07F8  
+                   l573 07E2                     l566 07FF                     l574 07E2                     l559 07CC  
+                   l567 07FF                     l568 07FF                     l943 07C0                     l951 07F8  
+                   _CKE 04A6                     l953 07FE                     l945 07E5                     l947 07F0  
+                   l949 07F6                     _CKP 00A4                     _RB6 0036                     _SMP 04A7  
+                  l1741 07CD                    l1743 07D3                    l1745 07D7                    l1747 07DC  
+                  _main 07CD                    btemp 007E                    start 0000                   ?_main 0070  
+                 _PORTB 0006                   _SSPM0 00A0                   _SSPM1 00A1                   _SSPM2 00A2  
+                 _SSPM3 00A3                   _TRISB 0086                   _TRISC 0087                   _SSPIF 0063  
+                 _SSPEN 00A5                   status 0003                   wtemp0 007E            __end_of_main 07E5  
+                ??_main 0072                  _SSPBUF 0013          __pcstackCOMMON 0070   __end_of_slave_initial 07CD  
+            __pmaintext 07CD   __end_of_slave_receive 0800    end_of_initialization 07BC     start_initialization 07BC  
+__size_of_slave_initial 000D  __size_of_slave_receive 001B          slave_receive@x 0071           _slave_initial 07C0  
+         _slave_receive 07E5                __ptext72 0000                __ptext73 07E5                __ptext74 07C0  
+              __ptext75 0000           __size_of_main 0018          ?_slave_initial 0070          ?_slave_receive 0070  
+       ??_slave_initial 0070         ??_slave_receive 0070  
