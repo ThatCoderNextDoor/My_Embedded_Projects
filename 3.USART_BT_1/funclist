@@ -1,0 +1,8 @@
+_delay: CODE, 1750 0 58
+_main: CODE, 1808 0 240
+_output: CODE, 1678 0 31
+_data: CODE, 1634 0 19
+_initial: CODE, 1653 0 25
+___wmul: CODE, 1709 0 41
+_command: CODE, 1615 0 19
+Total: 433
