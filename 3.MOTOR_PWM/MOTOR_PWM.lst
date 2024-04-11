@@ -1,0 +1,611 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.71a build 6446 
+                                                                                               Wed Dec 13 13:01:54 2023
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6446
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6446"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 2 "C:\Users\Lenovo\Desktop\PIC\TASK\50.MOTOR_PWM\MOTOR_PWM.C"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 2 "C:\Users\Lenovo\Desktop\PIC\TASK\50.MOTOR_PWM\MOTOR_PWM.C"
+    45  2007  3F72               	dw 0X3F72 ;#
+    46                           	FNCALL	_main,_delay_incre
+    47                           	FNCALL	_main,_delay_decre
+    48                           	FNROOT	_main
+    49                           	global	_CCP1CON
+    50                           psect	text72,local,class=CODE,delta=2
+    51                           global __ptext72
+    52  0000                     __ptext72:
+    53  0017                     _CCP1CON	set	23
+    54                           	global	_CCPR1L
+    55  0015                     _CCPR1L	set	21
+    56                           	global	_T2CON
+    57  0012                     _T2CON	set	18
+    58                           	global	_TMR2IF
+    59  0061                     _TMR2IF	set	97
+    60                           	global	_PR2
+    61  0092                     _PR2	set	146
+    62                           	global	_TRISC
+    63  0087                     _TRISC	set	135
+    64                           	file	"MOTOR_PWM.as"
+    65                           	line	#
+    66                           psect cinit,class=CODE,delta=2
+    67                           global start_initialization
+    68  0778                     start_initialization:
+    69                           
+    70                           psect cinit,class=CODE,delta=2
+    71                           global end_of_initialization
+    72                           
+    73                           ;End of C runtime variable initialization code
+    74                           
+    75  0778                     end_of_initialization:
+    76  0778  0183               clrf status
+    77  0779  120A  118A  2F7C   ljmp _main	;jump to C main() function
+    78                           psect	cstackCOMMON,class=COMMON,space=1
+    79                           global __pcstackCOMMON
+    80  0070                     __pcstackCOMMON:
+    81                           	global	?_delay_incre
+    82  0070                     ?_delay_incre:	; 0 bytes @ 0x0
+    83                           	global	??_delay_incre
+    84  0070                     ??_delay_incre:	; 0 bytes @ 0x0
+    85                           	global	?_delay_decre
+    86  0070                     ?_delay_decre:	; 0 bytes @ 0x0
+    87                           	global	??_delay_decre
+    88  0070                     ??_delay_decre:	; 0 bytes @ 0x0
+    89                           	global	?_main
+    90  0070                     ?_main:	; 0 bytes @ 0x0
+    91                           	global	delay_incre@i
+    92  0070                     delay_incre@i:	; 2 bytes @ 0x0
+    93                           	global	delay_decre@i
+    94  0070                     delay_decre@i:	; 2 bytes @ 0x0
+    95  0070                     	ds	2
+    96                           	global	??_main
+    97  0072                     ??_main:	; 0 bytes @ 0x2
+    98 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+    99 ;;Auto spaces:   Size  Autos    Used
+   100 ;; COMMON          14      2       2
+   101 ;; BANK0           80      0       0
+   102 ;; BANK1           80      0       0
+   103 ;; BANK3           96      0       0
+   104 ;; BANK2           96      0       0
+   105                           
+   106 ;;
+   107 ;; Pointer list with targets:
+   108                           
+   109                           
+   110                           
+   111 ;;
+   112 ;; Critical Paths under _main in COMMON
+   113 ;;
+   114 ;;   _main->_delay_incre
+   115 ;;   _main->_delay_decre
+   116 ;;
+   117 ;; Critical Paths under _main in BANK0
+   118 ;;
+   119 ;;   None.
+   120 ;;
+   121 ;; Critical Paths under _main in BANK1
+   122 ;;
+   123 ;;   None.
+   124 ;;
+   125 ;; Critical Paths under _main in BANK3
+   126 ;;
+   127 ;;   None.
+   128 ;;
+   129 ;; Critical Paths under _main in BANK2
+   130 ;;
+   131 ;;   None.
+   132                           
+   133 ;;
+   134 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   135 ;;
+   136                           
+   137 ;;
+   138 ;;Call Graph Tables:
+   139 ;;
+   140 ;; ---------------------------------------------------------------------------------
+   141 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   142 ;; ---------------------------------------------------------------------------------
+   143 ;; (0) _main                                                 0     0      0      90
+   144 ;;                        _delay_incre
+   145 ;;                        _delay_decre
+   146 ;; ---------------------------------------------------------------------------------
+   147 ;; (1) _delay_decre                                          2     2      0      45
+   148 ;;                                              0 COMMON     2     2      0
+   149 ;; ---------------------------------------------------------------------------------
+   150 ;; (1) _delay_incre                                          2     2      0      45
+   151 ;;                                              0 COMMON     2     2      0
+   152 ;; ---------------------------------------------------------------------------------
+   153 ;; Estimated maximum stack depth 1
+   154 ;; ---------------------------------------------------------------------------------
+   155                           
+   156 ;; Call Graph Graphs:
+   157                           
+   158 ;; _main (ROOT)
+   159 ;;   _delay_incre
+   160 ;;   _delay_decre
+   161 ;;
+   162                           
+   163 ;; Address spaces:
+   164                           
+   165 ;;Name               Size   Autos  Total    Cost      Usage
+   166 ;;BITCOMMON            E      0       0       0        0.0%
+   167 ;;EEDATA             100      0       0       0        0.0%
+   168 ;;NULL                 0      0       0       0        0.0%
+   169 ;;CODE                 0      0       0       0        0.0%
+   170 ;;COMMON               E      2       2       1       14.3%
+   171 ;;BITSFR0              0      0       0       1        0.0%
+   172 ;;SFR0                 0      0       0       1        0.0%
+   173 ;;BITSFR1              0      0       0       2        0.0%
+   174 ;;SFR1                 0      0       0       2        0.0%
+   175 ;;STACK                0      0       1       2        0.0%
+   176 ;;ABS                  0      0       0       3        0.0%
+   177 ;;BITBANK0            50      0       0       4        0.0%
+   178 ;;BITSFR3              0      0       0       4        0.0%
+   179 ;;SFR3                 0      0       0       4        0.0%
+   180 ;;BANK0               50      0       0       5        0.0%
+   181 ;;BITSFR2              0      0       0       5        0.0%
+   182 ;;SFR2                 0      0       0       5        0.0%
+   183 ;;BITBANK1            50      0       0       6        0.0%
+   184 ;;BANK1               50      0       0       7        0.0%
+   185 ;;BITBANK3            60      0       0       8        0.0%
+   186 ;;BANK3               60      0       0       9        0.0%
+   187 ;;BITBANK2            60      0       0      10        0.0%
+   188 ;;BANK2               60      0       0      11        0.0%
+   189 ;;DATA                 0      0       0      12        0.0%
+   190                           
+   191                           	global	_main
+   192                           psect	maintext,global,class=CODE,delta=2
+   193                           global __pmaintext
+   194  077C                     __pmaintext:
+   195                           
+   196 ;; *************** function _main *****************
+   197 ;; Defined at:
+   198 ;;		line 26 in file "C:\Users\Lenovo\Desktop\PIC\TASK\50.MOTOR_PWM\MOTOR_PWM.C"
+   199 ;; Parameters:    Size  Location     Type
+   200 ;;		None
+   201 ;; Auto vars:     Size  Location     Type
+   202 ;;		None
+   203 ;; Return value:  Size  Location     Type
+   204 ;;		None               void
+   205 ;; Registers used:
+   206 ;;		wreg, status,2, status,0, btemp+0, pclath, cstack
+   207 ;; Tracked objects:
+   208 ;;		On entry : 17F/0
+   209 ;;		On exit  : 0/0
+   210 ;;		Unchanged: 0/0
+   211 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   212 ;;      Params:         0       0       0       0       0
+   213 ;;      Locals:         0       0       0       0       0
+   214 ;;      Temps:          0       0       0       0       0
+   215 ;;      Totals:         0       0       0       0       0
+   216 ;;Total ram usage:        0 bytes
+   217 ;; Hardware stack levels required when called:    1
+   218 ;; This function calls:
+   219 ;;		_delay_incre
+   220 ;;		_delay_decre
+   221 ;; This function is called by:
+   222 ;;		Startup code after reset
+   223 ;; This function uses a non-reentrant model
+   224 ;;
+   225                           psect	maintext
+   226                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\50.MOTOR_PWM\MOTOR_PWM.C"
+   227                           	line	26
+   228                           	global	__size_of_main
+   229  0010                     	__size_of_main	equ	__end_of_main-_main
+   230                           	
+   231  077C                     _main:	
+   232                           	opt	stack 8
+   233                           ; Regs used in _main: [wreg+status,2-btemp+0+pclath+cstack]
+   234                           	line	27
+   235                           	
+   236  077C                     l1754:	
+   237                           ;MOTOR_PWM.C: 27: TRISC=0X00;
+   238  077C  1683               	bsf	status, 5	;RP0=1, select bank1
+   239  077D  1303               	bcf	status, 6	;RP1=0, select bank1
+   240  077E  0187               	clrf	(135)^080h	;volatile
+   241                           	line	28
+   242                           	
+   243  077F                     l1756:	
+   244                           ;MOTOR_PWM.C: 28: delay_incre();
+   245  077F  120A  118A  278C   	fcall	_delay_incre
+              120A  118A         
+   246                           	line	29
+   247                           	
+   248  0784                     l1758:	
+   249                           ;MOTOR_PWM.C: 29: delay_decre();
+   250  0784  120A  118A  27C6   	fcall	_delay_decre
+              120A  118A         
+   251                           	line	30
+   252                           	
+   253  0789                     l575:	
+   254                           	global	start
+   255  0789  120A  118A  2800   	ljmp	start
+   256                           	opt stack 0
+   257                           GLOBAL	__end_of_main
+   258  078C                     	__end_of_main:
+   259 ;; =============== function _main ends ============
+   260                           
+   261                           	signat	_main,88
+   262                           	global	_delay_decre
+   263                           psect	text73,local,class=CODE,delta=2
+   264                           global __ptext73
+   265  07C6                     __ptext73:
+   266                           
+   267 ;; *************** function _delay_decre *****************
+   268 ;; Defined at:
+   269 ;;		line 15 in file "C:\Users\Lenovo\Desktop\PIC\TASK\50.MOTOR_PWM\MOTOR_PWM.C"
+   270 ;; Parameters:    Size  Location     Type
+   271 ;;		None
+   272 ;; Auto vars:     Size  Location     Type
+   273 ;;  i               2    0[COMMON] int 
+   274 ;; Return value:  Size  Location     Type
+   275 ;;		None               void
+   276 ;; Registers used:
+   277 ;;		wreg, btemp+0
+   278 ;; Tracked objects:
+   279 ;;		On entry : 0/0
+   280 ;;		On exit  : 0/0
+   281 ;;		Unchanged: 0/0
+   282 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   283 ;;      Params:         0       0       0       0       0
+   284 ;;      Locals:         2       0       0       0       0
+   285 ;;      Temps:          0       0       0       0       0
+   286 ;;      Totals:         2       0       0       0       0
+   287 ;;Total ram usage:        2 bytes
+   288 ;; Hardware stack levels used:    1
+   289 ;; This function calls:
+   290 ;;		Nothing
+   291 ;; This function is called by:
+   292 ;;		_main
+   293 ;; This function uses a non-reentrant model
+   294 ;;
+   295                           psect	text73
+   296                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\50.MOTOR_PWM\MOTOR_PWM.C"
+   297                           	line	15
+   298                           	global	__size_of_delay_decre
+   299  003A                     	__size_of_delay_decre	equ	__end_of_delay_decre-_delay_decre
+   300                           	
+   301  07C6                     _delay_decre:	
+   302                           	opt	stack 7
+   303                           ; Regs used in _delay_decre: [wreg+btemp+0]
+   304                           	
+   305  07C6                     l956:	
+   306  07C6  307F               	movlw	(07Fh)
+   307  07C7  1283               	bcf	status, 5	;RP0=0, select bank0
+   308  07C8  1303               	bcf	status, 6	;RP1=0, select bank0
+   309  07C9  0092               	movwf	(18)	;volatile
+   310                           	line	16
+   311                           ;MOTOR_PWM.C: 16: CCP1CON=0X0C;
+   312  07CA  300C               	movlw	(0Ch)
+   313  07CB  0097               	movwf	(23)	;volatile
+   314                           	line	17
+   315                           ;MOTOR_PWM.C: 17: for(int i=255;i>1;i--)
+   316  07CC  30FF               	movlw	low(0FFh)
+   317  07CD  00F0               	movwf	(delay_decre@i)
+   318  07CE  3000               	movlw	high(0FFh)
+   319  07CF  00F1               	movwf	((delay_decre@i))+1
+   320                           	
+   321  07D0                     l958:	
+   322  07D0  0871               	movf	(delay_decre@i+1),w
+   323  07D1  3A80               	xorlw	80h
+   324  07D2  00FE               	movwf	btemp+0
+   325  07D3  3080               	movlw	(high(02h))^80h
+   326  07D4  027E               	subwf	btemp+0,w
+   327  07D5  1D03               	skipz
+   328  07D6  2FD9               	goto	u45
+   329  07D7  3002               	movlw	low(02h)
+   330  07D8  0270               	subwf	(delay_decre@i),w
+   331  07D9                     u45:
+   332                           
+   333  07D9  1803               	skipnc
+   334  07DA  2FDC               	goto	u41
+   335  07DB  2FDD               	goto	u40
+   336  07DC                     u41:
+   337  07DC  2FDE               	goto	l567
+   338  07DD                     u40:
+   339                           	
+   340  07DD                     l960:	
+   341  07DD  2FFF               	goto	l568
+   342                           	line	18
+   343                           	
+   344  07DE                     l567:	
+   345                           	
+   346  07DE                     l962:	
+   347                           ;MOTOR_PWM.C: 18: {PR2=249;
+   348  07DE  30F9               	movlw	(0F9h)
+   349  07DF  1683               	bsf	status, 5	;RP0=1, select bank1
+   350  07E0  1303               	bcf	status, 6	;RP1=0, select bank1
+   351  07E1  0092               	movwf	(146)^080h	;volatile
+   352                           	line	19
+   353                           ;MOTOR_PWM.C: 19: CCPR1L=i;
+   354  07E2  0870               	movf	(delay_decre@i),w
+   355  07E3  1283               	bcf	status, 5	;RP0=0, select bank0
+   356  07E4  1303               	bcf	status, 6	;RP1=0, select bank0
+   357  07E5  0095               	movwf	(21)	;volatile
+   358                           	line	20
+   359                           ;MOTOR_PWM.C: 20: while(TMR2IF==0);
+   360  07E6  2FE7               	goto	l569
+   361                           	
+   362  07E7                     l570:	
+   363                           	
+   364  07E7                     l569:	
+   365  07E7  1C8C               	btfss	(97/8),(97)&7
+   366  07E8  2FEA               	goto	u51
+   367  07E9  2FEB               	goto	u50
+   368  07EA                     u51:
+   369  07EA  2FE7               	goto	l570
+   370  07EB                     u50:
+   371                           	
+   372  07EB                     l571:	
+   373                           	line	21
+   374                           ;MOTOR_PWM.C: 21: TMR2IF=0;
+   375  07EB  108C               	bcf	(97/8),(97)&7
+   376                           	line	17
+   377                           	
+   378  07EC                     l964:	
+   379  07EC  30FF               	movlw	low(-1)
+   380  07ED  07F0               	addwf	(delay_decre@i),f
+   381  07EE  1803               	skipnc
+   382  07EF  0AF1               	incf	(delay_decre@i+1),f
+   383  07F0  30FF               	movlw	high(-1)
+   384  07F1  07F1               	addwf	(delay_decre@i+1),f
+   385                           	
+   386  07F2                     l966:	
+   387  07F2  0871               	movf	(delay_decre@i+1),w
+   388  07F3  3A80               	xorlw	80h
+   389  07F4  00FE               	movwf	btemp+0
+   390  07F5  3080               	movlw	(high(02h))^80h
+   391  07F6  027E               	subwf	btemp+0,w
+   392  07F7  1D03               	skipz
+   393  07F8  2FFB               	goto	u65
+   394  07F9  3002               	movlw	low(02h)
+   395  07FA  0270               	subwf	(delay_decre@i),w
+   396  07FB                     u65:
+   397                           
+   398  07FB  1803               	skipnc
+   399  07FC  2FFE               	goto	u61
+   400  07FD  2FFF               	goto	u60
+   401  07FE                     u61:
+   402  07FE  2FDE               	goto	l567
+   403  07FF                     u60:
+   404                           	
+   405  07FF                     l568:	
+   406                           	line	24
+   407                           	
+   408  07FF                     l572:	
+   409  07FF  0008               	return
+   410                           	opt stack 0
+   411                           GLOBAL	__end_of_delay_decre
+   412  0800                     	__end_of_delay_decre:
+   413 ;; =============== function _delay_decre ends ============
+   414                           
+   415                           	signat	_delay_decre,88
+   416                           	global	_delay_incre
+   417                           psect	text74,local,class=CODE,delta=2
+   418                           global __ptext74
+   419  078C                     __ptext74:
+   420                           
+   421 ;; *************** function _delay_incre *****************
+   422 ;; Defined at:
+   423 ;;		line 5 in file "C:\Users\Lenovo\Desktop\PIC\TASK\50.MOTOR_PWM\MOTOR_PWM.C"
+   424 ;; Parameters:    Size  Location     Type
+   425 ;;		None
+   426 ;; Auto vars:     Size  Location     Type
+   427 ;;  i               2    0[COMMON] int 
+   428 ;; Return value:  Size  Location     Type
+   429 ;;		None               void
+   430 ;; Registers used:
+   431 ;;		wreg, btemp+0
+   432 ;; Tracked objects:
+   433 ;;		On entry : 0/0
+   434 ;;		On exit  : 0/0
+   435 ;;		Unchanged: 0/0
+   436 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   437 ;;      Params:         0       0       0       0       0
+   438 ;;      Locals:         2       0       0       0       0
+   439 ;;      Temps:          0       0       0       0       0
+   440 ;;      Totals:         2       0       0       0       0
+   441 ;;Total ram usage:        2 bytes
+   442 ;; Hardware stack levels used:    1
+   443 ;; This function calls:
+   444 ;;		Nothing
+   445 ;; This function is called by:
+   446 ;;		_main
+   447 ;; This function uses a non-reentrant model
+   448 ;;
+   449                           psect	text74
+   450                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\50.MOTOR_PWM\MOTOR_PWM.C"
+   451                           	line	5
+   452                           	global	__size_of_delay_incre
+   453  003A                     	__size_of_delay_incre	equ	__end_of_delay_incre-_delay_incre
+   454                           	
+   455  078C                     _delay_incre:	
+   456                           	opt	stack 7
+   457                           ; Regs used in _delay_incre: [wreg+btemp+0]
+   458                           	
+   459  078C                     l944:	
+   460  078C  307F               	movlw	(07Fh)
+   461  078D  1283               	bcf	status, 5	;RP0=0, select bank0
+   462  078E  1303               	bcf	status, 6	;RP1=0, select bank0
+   463  078F  0092               	movwf	(18)	;volatile
+   464                           	line	6
+   465                           ;MOTOR_PWM.C: 6: CCP1CON=0X0C;
+   466  0790  300C               	movlw	(0Ch)
+   467  0791  0097               	movwf	(23)	;volatile
+   468                           	line	7
+   469                           ;MOTOR_PWM.C: 7: for(int i=1;i<255;i++)
+   470  0792  3001               	movlw	low(01h)
+   471  0793  00F0               	movwf	(delay_incre@i)
+   472  0794  3000               	movlw	high(01h)
+   473  0795  00F1               	movwf	((delay_incre@i))+1
+   474                           	
+   475  0796                     l946:	
+   476  0796  0871               	movf	(delay_incre@i+1),w
+   477  0797  3A80               	xorlw	80h
+   478  0798  00FE               	movwf	btemp+0
+   479  0799  3080               	movlw	(high(0FFh))^80h
+   480  079A  027E               	subwf	btemp+0,w
+   481  079B  1D03               	skipz
+   482  079C  2F9F               	goto	u15
+   483  079D  30FF               	movlw	low(0FFh)
+   484  079E  0270               	subwf	(delay_incre@i),w
+   485  079F                     u15:
+   486                           
+   487  079F  1C03               	skipc
+   488  07A0  2FA2               	goto	u11
+   489  07A1  2FA3               	goto	u10
+   490  07A2                     u11:
+   491  07A2  2FA4               	goto	l559
+   492  07A3                     u10:
+   493                           	
+   494  07A3                     l948:	
+   495  07A3  2FC5               	goto	l560
+   496                           	line	8
+   497                           	
+   498  07A4                     l559:	
+   499                           	
+   500  07A4                     l950:	
+   501                           ;MOTOR_PWM.C: 8: {PR2=249;
+   502  07A4  30F9               	movlw	(0F9h)
+   503  07A5  1683               	bsf	status, 5	;RP0=1, select bank1
+   504  07A6  1303               	bcf	status, 6	;RP1=0, select bank1
+   505  07A7  0092               	movwf	(146)^080h	;volatile
+   506                           	line	9
+   507                           ;MOTOR_PWM.C: 9: CCPR1L=i;
+   508  07A8  0870               	movf	(delay_incre@i),w
+   509  07A9  1283               	bcf	status, 5	;RP0=0, select bank0
+   510  07AA  1303               	bcf	status, 6	;RP1=0, select bank0
+   511  07AB  0095               	movwf	(21)	;volatile
+   512                           	line	10
+   513                           ;MOTOR_PWM.C: 10: while(TMR2IF==0);
+   514  07AC  2FAD               	goto	l561
+   515                           	
+   516  07AD                     l562:	
+   517                           	
+   518  07AD                     l561:	
+   519  07AD  1C8C               	btfss	(97/8),(97)&7
+   520  07AE  2FB0               	goto	u21
+   521  07AF  2FB1               	goto	u20
+   522  07B0                     u21:
+   523  07B0  2FAD               	goto	l562
+   524  07B1                     u20:
+   525                           	
+   526  07B1                     l563:	
+   527                           	line	11
+   528                           ;MOTOR_PWM.C: 11: TMR2IF=0;
+   529  07B1  108C               	bcf	(97/8),(97)&7
+   530                           	line	7
+   531                           	
+   532  07B2                     l952:	
+   533  07B2  3001               	movlw	low(01h)
+   534  07B3  07F0               	addwf	(delay_incre@i),f
+   535  07B4  1803               	skipnc
+   536  07B5  0AF1               	incf	(delay_incre@i+1),f
+   537  07B6  3000               	movlw	high(01h)
+   538  07B7  07F1               	addwf	(delay_incre@i+1),f
+   539                           	
+   540  07B8                     l954:	
+   541  07B8  0871               	movf	(delay_incre@i+1),w
+   542  07B9  3A80               	xorlw	80h
+   543  07BA  00FE               	movwf	btemp+0
+   544  07BB  3080               	movlw	(high(0FFh))^80h
+   545  07BC  027E               	subwf	btemp+0,w
+   546  07BD  1D03               	skipz
+   547  07BE  2FC1               	goto	u35
+   548  07BF  30FF               	movlw	low(0FFh)
+   549  07C0  0270               	subwf	(delay_incre@i),w
+   550  07C1                     u35:
+   551                           
+   552  07C1  1C03               	skipc
+   553  07C2  2FC4               	goto	u31
+   554  07C3  2FC5               	goto	u30
+   555  07C4                     u31:
+   556  07C4  2FA4               	goto	l559
+   557  07C5                     u30:
+   558                           	
+   559  07C5                     l560:	
+   560                           	line	13
+   561                           	
+   562  07C5                     l564:	
+   563  07C5  0008               	return
+   564                           	opt stack 0
+   565                           GLOBAL	__end_of_delay_incre
+   566  07C6                     	__end_of_delay_incre:
+   567 ;; =============== function _delay_incre ends ============
+   568                           
+   569                           	signat	_delay_incre,88
+   570                           psect	text75,local,class=CODE,delta=2
+   571                           global __ptext75
+   572  0000                     __ptext75:
+   573                           	global	btemp
+   574  007E                     	btemp set 07Eh
+   575                           
+   576                           	DABS	1,126,2	;btemp
+   577                           	global	wtemp0
+   578  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.71a build 6446 
+Symbol Table                                                                                   Wed Dec 13 13:01:54 2023
+
+                  u10 07A3                    u11 07A2                    u20 07B1                    u21 07B0  
+                  u30 07C5                    u31 07C4                    u15 079F                    u40 07DD  
+                  u41 07DC                    u50 07EB                    u35 07C1                    u51 07EA  
+                  u60 07FF                    u61 07FE                    u45 07D9                    u65 07FB  
+                 l560 07C5                   l561 07AD                   l562 07AD                   l570 07E7  
+                 l563 07B1                   l571 07EB                   l564 07C5                   l572 07FF  
+                 l559 07A4                   l567 07DE                   l575 0789                   l568 07FF  
+                 l569 07E7                   l950 07A4                   l952 07B2                   l944 078C  
+                 l960 07DD                   l954 07B8                   l946 0796                   l962 07DE  
+                 l948 07A3                   l964 07EC                   l956 07C6                   l966 07F2  
+                 l958 07D0                   _PR2 0092                  l1754 077C                  l1756 077F  
+                l1758 0784                  _main 077C                  btemp 007E                  start 0000  
+               ?_main 0070                 _T2CON 0012                 _TRISC 0087                 status 0003  
+               wtemp0 007E  __size_of_delay_decre 003A  __size_of_delay_incre 003A          __end_of_main 078C  
+              ??_main 0072                _CCPR1L 0015                _TMR2IF 0061        __pcstackCOMMON 0070  
+          __pmaintext 077C               _CCP1CON 0017  end_of_initialization 0778         ??_delay_decre 0070  
+       ??_delay_incre 0070   __end_of_delay_decre 0800   __end_of_delay_incre 07C6   start_initialization 0778  
+         _delay_decre 07C6           _delay_incre 078C          delay_decre@i 0070          delay_incre@i 0070  
+            __ptext72 0000              __ptext73 07C6              __ptext74 078C              __ptext75 0000  
+       __size_of_main 0010          ?_delay_decre 0070          ?_delay_incre 0070  
