@@ -1,0 +1,361 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.71a build 6446 
+                                                                                               Wed Dec 13 09:29:07 2023
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6446
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6446"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 2 "C:\Users\Lenovo\Desktop\PIC\TASK\48.PWM_3MS\PWM_3MS.C"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 2 "C:\Users\Lenovo\Desktop\PIC\TASK\48.PWM_3MS\PWM_3MS.C"
+    45  2007  3F72               	dw 0X3F72 ;#
+    46                           	FNCALL	_main,_delay
+    47                           	FNROOT	_main
+    48                           	global	_CCP1CON
+    49                           psect	text60,local,class=CODE,delta=2
+    50                           global __ptext60
+    51  0000                     __ptext60:
+    52  0017                     _CCP1CON	set	23
+    53                           	global	_CCPR1L
+    54  0015                     _CCPR1L	set	21
+    55                           	global	_T2CON
+    56  0012                     _T2CON	set	18
+    57                           	global	_TMR2IF
+    58  0061                     _TMR2IF	set	97
+    59                           	global	_PR2
+    60  0092                     _PR2	set	146
+    61                           	global	_TRISC
+    62  0087                     _TRISC	set	135
+    63                           	file	"PWM_3MS.as"
+    64                           	line	#
+    65                           psect cinit,class=CODE,delta=2
+    66                           global start_initialization
+    67  07DC                     start_initialization:
+    68                           
+    69                           psect cinit,class=CODE,delta=2
+    70                           global end_of_initialization
+    71                           
+    72                           ;End of C runtime variable initialization code
+    73                           
+    74  07DC                     end_of_initialization:
+    75  07DC  0183               clrf status
+    76  07DD  120A  118A  2FE0   ljmp _main	;jump to C main() function
+    77                           psect	cstackCOMMON,class=COMMON,space=1
+    78                           global __pcstackCOMMON
+    79  0000                     __pcstackCOMMON:
+    80                           	global	?_delay
+    81  0000                     ?_delay:	; 0 bytes @ 0x0
+    82                           	global	??_delay
+    83  0000                     ??_delay:	; 0 bytes @ 0x0
+    84                           	global	?_main
+    85  0000                     ?_main:	; 0 bytes @ 0x0
+    86                           	global	??_main
+    87  0000                     ??_main:	; 0 bytes @ 0x0
+    88 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+    89 ;;Auto spaces:   Size  Autos    Used
+    90 ;; COMMON          14      0       0
+    91 ;; BANK0           80      0       0
+    92 ;; BANK1           80      0       0
+    93 ;; BANK3           96      0       0
+    94 ;; BANK2           96      0       0
+    95                           
+    96 ;;
+    97 ;; Pointer list with targets:
+    98                           
+    99                           
+   100                           
+   101 ;;
+   102 ;; Critical Paths under _main in COMMON
+   103 ;;
+   104 ;;   None.
+   105 ;;
+   106 ;; Critical Paths under _main in BANK0
+   107 ;;
+   108 ;;   None.
+   109 ;;
+   110 ;; Critical Paths under _main in BANK1
+   111 ;;
+   112 ;;   None.
+   113 ;;
+   114 ;; Critical Paths under _main in BANK3
+   115 ;;
+   116 ;;   None.
+   117 ;;
+   118 ;; Critical Paths under _main in BANK2
+   119 ;;
+   120 ;;   None.
+   121                           
+   122 ;;
+   123 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   124 ;;
+   125                           
+   126 ;;
+   127 ;;Call Graph Tables:
+   128 ;;
+   129 ;; ---------------------------------------------------------------------------------
+   130 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   131 ;; ---------------------------------------------------------------------------------
+   132 ;; (0) _main                                                 0     0      0       0
+   133 ;;                              _delay
+   134 ;; ---------------------------------------------------------------------------------
+   135 ;; (1) _delay                                                0     0      0       0
+   136 ;; ---------------------------------------------------------------------------------
+   137 ;; Estimated maximum stack depth 1
+   138 ;; ---------------------------------------------------------------------------------
+   139                           
+   140 ;; Call Graph Graphs:
+   141                           
+   142 ;; _main (ROOT)
+   143 ;;   _delay
+   144 ;;
+   145                           
+   146 ;; Address spaces:
+   147                           
+   148 ;;Name               Size   Autos  Total    Cost      Usage
+   149 ;;BITCOMMON            E      0       0       0        0.0%
+   150 ;;EEDATA             100      0       0       0        0.0%
+   151 ;;NULL                 0      0       0       0        0.0%
+   152 ;;CODE                 0      0       0       0        0.0%
+   153 ;;COMMON               E      0       0       1        0.0%
+   154 ;;BITSFR0              0      0       0       1        0.0%
+   155 ;;SFR0                 0      0       0       1        0.0%
+   156 ;;BITSFR1              0      0       0       2        0.0%
+   157 ;;SFR1                 0      0       0       2        0.0%
+   158 ;;STACK                0      0       1       2        0.0%
+   159 ;;ABS                  0      0       0       3        0.0%
+   160 ;;BITBANK0            50      0       0       4        0.0%
+   161 ;;BITSFR3              0      0       0       4        0.0%
+   162 ;;SFR3                 0      0       0       4        0.0%
+   163 ;;BANK0               50      0       0       5        0.0%
+   164 ;;BITSFR2              0      0       0       5        0.0%
+   165 ;;SFR2                 0      0       0       5        0.0%
+   166 ;;BITBANK1            50      0       0       6        0.0%
+   167 ;;BANK1               50      0       0       7        0.0%
+   168 ;;BITBANK3            60      0       0       8        0.0%
+   169 ;;BANK3               60      0       0       9        0.0%
+   170 ;;BITBANK2            60      0       0      10        0.0%
+   171 ;;BANK2               60      0       0      11        0.0%
+   172 ;;DATA                 0      0       0      12        0.0%
+   173                           
+   174                           	global	_main
+   175                           psect	maintext,global,class=CODE,delta=2
+   176                           global __pmaintext
+   177  07E0                     __pmaintext:
+   178                           
+   179 ;; *************** function _main *****************
+   180 ;; Defined at:
+   181 ;;		line 13 in file "C:\Users\Lenovo\Desktop\PIC\TASK\48.PWM_3MS\PWM_3MS.C"
+   182 ;; Parameters:    Size  Location     Type
+   183 ;;		None
+   184 ;; Auto vars:     Size  Location     Type
+   185 ;;		None
+   186 ;; Return value:  Size  Location     Type
+   187 ;;		None               void
+   188 ;; Registers used:
+   189 ;;		wreg, status,2, status,0, pclath, cstack
+   190 ;; Tracked objects:
+   191 ;;		On entry : 17F/0
+   192 ;;		On exit  : 0/0
+   193 ;;		Unchanged: 0/0
+   194 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   195 ;;      Params:         0       0       0       0       0
+   196 ;;      Locals:         0       0       0       0       0
+   197 ;;      Temps:          0       0       0       0       0
+   198 ;;      Totals:         0       0       0       0       0
+   199 ;;Total ram usage:        0 bytes
+   200 ;; Hardware stack levels required when called:    1
+   201 ;; This function calls:
+   202 ;;		_delay
+   203 ;; This function is called by:
+   204 ;;		Startup code after reset
+   205 ;; This function uses a non-reentrant model
+   206 ;;
+   207                           psect	maintext
+   208                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\48.PWM_3MS\PWM_3MS.C"
+   209                           	line	13
+   210                           	global	__size_of_main
+   211  000B                     	__size_of_main	equ	__end_of_main-_main
+   212                           	
+   213  07E0                     _main:	
+   214                           	opt	stack 8
+   215                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   216                           	line	14
+   217                           	
+   218  07E0                     l1722:	
+   219                           ;PWM_3MS.C: 14: TRISC=0X00;
+   220  07E0  1683               	bsf	status, 5	;RP0=1, select bank1
+   221  07E1  1303               	bcf	status, 6	;RP1=0, select bank1
+   222  07E2  0187               	clrf	(135)^080h	;volatile
+   223                           	line	15
+   224                           	
+   225  07E3                     l1724:	
+   226                           ;PWM_3MS.C: 15: delay();
+   227  07E3  120A  118A  27EB   	fcall	_delay
+              120A  118A         
+   228                           	line	16
+   229                           	
+   230  07E8                     l565:	
+   231                           	global	start
+   232  07E8  120A  118A  2800   	ljmp	start
+   233                           	opt stack 0
+   234                           GLOBAL	__end_of_main
+   235  07EB                     	__end_of_main:
+   236 ;; =============== function _main ends ============
+   237                           
+   238                           	signat	_main,88
+   239                           	global	_delay
+   240                           psect	text61,local,class=CODE,delta=2
+   241                           global __ptext61
+   242  07EB                     __ptext61:
+   243                           
+   244 ;; *************** function _delay *****************
+   245 ;; Defined at:
+   246 ;;		line 5 in file "C:\Users\Lenovo\Desktop\PIC\TASK\48.PWM_3MS\PWM_3MS.C"
+   247 ;; Parameters:    Size  Location     Type
+   248 ;;		None
+   249 ;; Auto vars:     Size  Location     Type
+   250 ;;		None
+   251 ;; Return value:  Size  Location     Type
+   252 ;;		None               void
+   253 ;; Registers used:
+   254 ;;		wreg
+   255 ;; Tracked objects:
+   256 ;;		On entry : 0/0
+   257 ;;		On exit  : 0/0
+   258 ;;		Unchanged: 0/0
+   259 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   260 ;;      Params:         0       0       0       0       0
+   261 ;;      Locals:         0       0       0       0       0
+   262 ;;      Temps:          0       0       0       0       0
+   263 ;;      Totals:         0       0       0       0       0
+   264 ;;Total ram usage:        0 bytes
+   265 ;; Hardware stack levels used:    1
+   266 ;; This function calls:
+   267 ;;		Nothing
+   268 ;; This function is called by:
+   269 ;;		_main
+   270 ;; This function uses a non-reentrant model
+   271 ;;
+   272                           psect	text61
+   273                           	file	"C:\Users\Lenovo\Desktop\PIC\TASK\48.PWM_3MS\PWM_3MS.C"
+   274                           	line	5
+   275                           	global	__size_of_delay
+   276  0015                     	__size_of_delay	equ	__end_of_delay-_delay
+   277                           	
+   278  07EB                     _delay:	
+   279                           	opt	stack 7
+   280                           ; Regs used in _delay: [wreg]
+   281                           	
+   282  07EB                     l934:	
+   283  07EB  307F               	movlw	(07Fh)
+   284  07EC  1283               	bcf	status, 5	;RP0=0, select bank0
+   285  07ED  1303               	bcf	status, 6	;RP1=0, select bank0
+   286  07EE  0092               	movwf	(18)	;volatile
+   287                           	line	6
+   288                           ;PWM_3MS.C: 6: CCP1CON=0X0C;
+   289  07EF  300C               	movlw	(0Ch)
+   290  07F0  0097               	movwf	(23)	;volatile
+   291                           	line	7
+   292                           ;PWM_3MS.C: 7: PR2=186;
+   293  07F1  30BA               	movlw	(0BAh)
+   294  07F2  1683               	bsf	status, 5	;RP0=1, select bank1
+   295  07F3  1303               	bcf	status, 6	;RP1=0, select bank1
+   296  07F4  0092               	movwf	(146)^080h	;volatile
+   297                           	line	8
+   298                           ;PWM_3MS.C: 8: CCPR1L=124.0248;
+   299  07F5  307C               	movlw	(07Ch)
+   300  07F6  1283               	bcf	status, 5	;RP0=0, select bank0
+   301  07F7  1303               	bcf	status, 6	;RP1=0, select bank0
+   302  07F8  0095               	movwf	(21)	;volatile
+   303                           	line	9
+   304                           ;PWM_3MS.C: 9: while(TMR2IF==0);
+   305  07F9  2FFA               	goto	l559
+   306                           	
+   307  07FA                     l560:	
+   308                           	
+   309  07FA                     l559:	
+   310  07FA  1C8C               	btfss	(97/8),(97)&7
+   311  07FB  2FFD               	goto	u11
+   312  07FC  2FFE               	goto	u10
+   313  07FD                     u11:
+   314  07FD  2FFA               	goto	l560
+   315  07FE                     u10:
+   316                           	
+   317  07FE                     l561:	
+   318                           	line	10
+   319                           ;PWM_3MS.C: 10: TMR2IF=0;
+   320  07FE  108C               	bcf	(97/8),(97)&7
+   321                           	line	11
+   322                           	
+   323  07FF                     l562:	
+   324  07FF  0008               	return
+   325                           	opt stack 0
+   326                           GLOBAL	__end_of_delay
+   327  0800                     	__end_of_delay:
+   328 ;; =============== function _delay ends ============
+   329                           
+   330                           	signat	_delay,88
+   331                           psect	text62,local,class=CODE,delta=2
+   332                           global __ptext62
+   333  0000                     __ptext62:
+   334                           	global	btemp
+   335  007E                     	btemp set 07Eh
+   336                           
+   337                           	DABS	1,126,2	;btemp
+   338                           	global	wtemp0
+   339  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.71a build 6446 
+Symbol Table                                                                                   Wed Dec 13 09:29:07 2023
+
+                  u10 07FE                    u11 07FD                   l560 07FA                   l561 07FE  
+                 l562 07FF                   l565 07E8                   l559 07FA                   l934 07EB  
+                 _PR2 0092                  l1722 07E0                  l1724 07E3                  _main 07E0  
+                btemp 007E                  start 0000                 ?_main 0000                 _T2CON 0012  
+               _TRISC 0087                 _delay 07EB                 status 0003                 wtemp0 007E  
+        __end_of_main 07EB                ??_main 0000                ?_delay 0000                _CCPR1L 0015  
+              _TMR2IF 0061        __pcstackCOMMON 0000         __end_of_delay 0800               ??_delay 0000  
+          __pmaintext 07E0               _CCP1CON 0017  end_of_initialization 07DC   start_initialization 07DC  
+      __size_of_delay 0015              __ptext60 0000              __ptext61 07EB              __ptext62 0000  
+       __size_of_main 000B  
